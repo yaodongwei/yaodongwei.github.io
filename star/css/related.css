@@ -1,0 +1,61 @@
+.map1, .map2, .map3{
+	height: 200px;
+}
+.map1{
+	background: url(../img/related/map1.png) no-repeat center 0;
+}
+.map2{
+	background: url(../img/related/map2.png) no-repeat center 0;
+}
+.map3{
+	background: url(../img/related/map3.png) no-repeat center 0;
+}
+.area{
+	color: #387bbe;
+}
+.area-title{
+	height: 64px;
+	padding-left: 14px;
+	margin: 36px 0 26px 0;
+	border-left: 2px solid #387bbe;
+}
+.area-title h1{
+	font-size: 32px;
+}
+.area-title h3{
+	font-size: 18px;
+	margin-top: 26px;
+}
+.area .area-desc{
+	padding-left: 45px;
+	background: url(../img/related/icons.png) no-repeat 0 0;
+}
+.area .area-desc p{
+	line-height: 40px;
+	font-size: 18px;
+}
+.area-detail{
+	color: #000;
+	margin: 24px 0 86px 0;
+	line-height: 32px;
+}
+.area-detail .left{
+	width: 540px;
+	margin-left: 10px;
+	font-size: 18px;
+}
+.area-detail .area-detail-right{
+	margin-left: 32px;
+}
+.area .area-desc .smfont{
+	font-size: 14px;
+}
+.hotal.cur{
+	background-color: #387bbe;
+}
+.hotal.cur a{
+	cursor: default;
+}
+.area-paperbark .content{
+	background: url(../img/related/circle-bg.png) no-repeat right 0;
+}

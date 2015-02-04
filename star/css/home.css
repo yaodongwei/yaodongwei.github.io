@@ -1,0 +1,137 @@
+body{
+	font-family: STHeiti,"Microsoft Yahei","Microsoft YaHei",Arial,sans-serif;
+}
+.left{
+	float: left;
+}
+.right{
+	float: right;
+}
+.text-right{
+	text-align: right;
+}
+.header{
+	height: 80px;
+	background-color: #253149;
+}
+.header .logo{
+	display: block;
+	width: 180px;
+	height: 80px;
+	background: url(../img/logo.png) no-repeat center 0;
+}
+.header *{
+	color: #fff;
+	font-size: 14px;
+	line-height: 80px;
+	text-decoration: none;
+}
+.header .nav li{
+	float: left;
+	text-align: center;
+	
+}
+.header .nav .navhref{
+	width: 420px;
+}
+.header .nav a{
+	line-height: 80px;
+	padding: 0 20px;
+	display: block;
+}
+.header .contract{
+	width: 106px;
+	padding-left: 20px;
+	padding-left: 24px;
+	background: url(../img/phone.png) no-repeat 0px 30px;
+}
+.header .nav li:hover{
+	background-color: #387bbe;
+}
+.content{
+	width: 1170px;
+	margin: 0 auto;
+	position: relative;
+}
+.whyme, .whatme, .whareme{
+	height: 700px;
+}
+.whyme{
+	background: url(../img/whyme.png) #222 no-repeat center 0;
+}
+.whatme{
+	background: url(../img/whatme.jpg) #222 no-repeat center 0;
+}
+.whareme{
+	background: url(../img/whareme.jpg) #222 no-repeat center 0;
+}
+.whyme .logoimg{
+	width: 220px;
+	height: 320px;
+	background:  url(../img/logo-xl.png) no-repeat center 0;
+	position: absolute;
+	top: 130px;
+	left: 220px;
+}
+.whyme .whyme-info, .whatme .whatme-info, .whareme .whareme-info{
+	width: 464px;
+	height: 170px;
+	position: absolute;
+	padding: 30px 0 0 50px;
+	font-size: 16px;
+	background:  url(../img/btntip.png) no-repeat 0 0;
+}
+.whyme .whyme-info{
+	top: 200px;
+	right: 55px;
+}
+.desc{
+	color: #fff;
+	line-height: 22px;
+}
+.text-right, .text-left{
+	margin-bottom: 20px;
+}
+.whatme .whatme-info{
+	left: 100px;
+	top: 240px;
+}
+.whareme .whareme-info{
+	left: 100px;
+	top: 240px;
+	width: 570px;
+}
+.footer{
+	height: 100px;
+	background-color: #253149;
+}
+.footer .friend-link{
+	display: block;
+	float: left;
+	width: 72px;
+	height: 72px;
+	margin: 11px 20px 0 0;
+	background-color: #fff;
+}
+.footer .copyright-info{
+	width: 330px;
+	margin-top: 15px;
+	line-height: 34px;
+	color: #fff;
+}
+.footer .copyright li{
+	float: right;
+}
+.footer .copyright a{
+	color: #fff;
+	text-decoration: none;
+}
+.footer .copyright a:hover{
+	text-decoration: underline;
+}
+.footer .split-line{
+	margin: 0 10px;
+}
+.footer .companytip{
+	text-align: right;
+}
