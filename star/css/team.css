@@ -1,0 +1,38 @@
+.area-team{
+	margin-top: 60px;
+}
+.team-desc{
+	padding-top: 80px;
+	background: url(../img/circle-bg.png) #FFFFFF no-repeat -52px 5px;
+}
+.team-desc li{
+	float: left;
+	width: 33.3%;
+}
+.team-desc .team-user-name {
+	line-height: 50px;
+	font-weight: bold;
+	font-size: 26px;
+	color: #387bbe;
+	margin-top: 20px;
+}
+.team-desc .team-user-desc{
+	font-size: 16px;
+	line-height: 28px;
+}
+.area-team .area-detail{
+	margin-bottom: 0px;
+}
+.team-desc img{
+	border-radius: 110px;
+}
+.team-desc .team-user-detail{
+	width: 344px;
+	margin-top: 30px;
+	line-height: 24px;
+	word-break: break-word;
+}
+.team-info-bg{
+	background: url(../img/bg-2.png) no-repeat 986px 0px;
+	height: 320px;
+}

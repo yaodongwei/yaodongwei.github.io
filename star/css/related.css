@@ -1,15 +1,3 @@
-.map1, .map2, .map3{
-	height: 200px;
-}
-.map1{
-	background: url(../img/related/map1.png) no-repeat center 0;
-}
-.map2{
-	background: url(../img/related/map2.png) no-repeat center 0;
-}
-.map3{
-	background: url(../img/related/map3.png) no-repeat center 0;
-}
 .area{
 	color: #387bbe;
 }
@@ -57,5 +45,5 @@
 	cursor: default;
 }
 .area-paperbark .content{
-	background: url(../img/related/circle-bg.png) no-repeat right 0;
+	background: url(../img/circle-bg.png) no-repeat right 0;
 }

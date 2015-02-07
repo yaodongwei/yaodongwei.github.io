@@ -1,0 +1,440 @@
+/*reset*/
+
+/** 清除内外边距 **/
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
+dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+pre,code, /* text formatting elements 文本格式元素 */
+form, fieldset, legend, button, input, textarea, /* form elements 表单元素 */
+th, td /* table elements 表格元素 */ {
+    margin: 0;
+    padding: 0;
+}
+/** 重置表格元素 **/
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+/*=====设置默认字体==============*/
+
+body,
+button, input, select, textarea, td, th {
+    font: 14px/18px Arial,'SimSun';
+}
+/*==============按钮鼠标手势===========*/
+button, input[type="button"],input[type="submit"], input[type="reset"], input[type="file"] {
+    cursor: pointer;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    button, input[type="button"],input[type="submit"], input[type="reset"], input[type="file"] {
+        padding: 1px 6px;
+    }
+}
+
+textarea,input {
+    outline: none;
+}
+
+/**=====让链接里的 img 无边框===*/
+fieldset,img, iframe {
+    border: none;
+}
+
+p, div, td {
+    word-break: break-all;
+}
+
+/** 重置列表元素 **/
+ul, ol {
+    list-style: none;
+}
+
+/** 链接相关 */
+
+a {
+    color: #0449be;
+}
+
+/* 重置 HTML5 元素 */
+article, aside, details, figcaption, figure, footer,header, hgroup, menu, nav, section,
+summary, time, mark, audio, video {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden
+}
+
+.clearfix {
+    zoom:1
+}
+
+
+/*-----------------------home---------------------*/
+body{
+    font-family: STHeiti,"Microsoft Yahei","Microsoft YaHei",Arial,sans-serif;
+}
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
+.text-right{
+    text-align: right;
+}
+.header{
+    height: 80px;
+    background-color: #253149;
+}
+.header .logo{
+    display: block;
+    width: 180px;
+    height: 80px;
+    background: url(../img/logo.png) no-repeat center 0;
+}
+.header *{
+    color: #fff;
+    font-size: 14px;
+    line-height: 80px;
+    text-decoration: none;
+}
+.header .nav li{
+    float: left;
+    text-align: center;
+    
+}
+.header .nav .navhref{
+    width: 420px;
+}
+.header .nav a{
+    line-height: 80px;
+    padding: 0 20px;
+    display: block;
+}
+.header .contract{
+    width: 106px;
+    padding-left: 20px;
+    padding-left: 24px;
+    background: url(../img/phone.png) no-repeat 0px 30px;
+}
+.header .nav li:hover{
+    background-color: #387bbe;
+}
+.content{
+    width: 1170px;
+    margin: 0 auto;
+    position: relative;
+}
+.desc-tips{
+    height: 50px;
+    position: absolute;
+    width: 50px;
+    display: block;
+    top: 10px;
+    left: -4px;
+    cursor: pointer;
+    background-image: url(../img/home/btntip.png);
+    background-position: 0 0;
+}
+.desc-tips:hover{
+    background-position: -53.5px 0;
+}
+.whyme, .whatme, .whareme{
+    height: 700px;
+}
+.whyme{
+    background: url(../img/home/whyme.png) #222 no-repeat center 0;
+}
+.whatme{
+    background: url(../img/home/whatme.jpg) #222 no-repeat center 0;
+}
+.whareme{
+    background: url(../img/home/whareme.jpg) #222 no-repeat center 0;
+}
+.whyme .logoimg{
+    width: 220px;
+    height: 320px;
+    background:  url(../img/logo-xl.png) no-repeat center 0;
+    position: absolute;
+    top: 130px;
+    left: 220px;
+}
+.whyme .whyme-info, .whatme .whatme-info, .whareme .whareme-info{
+    width: 464px;
+    height: 170px;
+    position: absolute;
+    padding: 30px 0 0 50px;
+    font-size: 16px;
+    background: url(../img/home/info-line.png) no-repeat 42px 21px;
+}
+.whyme .whyme-info{
+    top: 200px;
+    right: 55px;
+}
+.desc{
+    color: #fff;
+    line-height: 22px;
+}
+.text-right, .text-left{
+    margin-bottom: 20px;
+}
+.whatme .whatme-info{
+    left: 100px;
+    top: 240px;
+}
+.whareme .whareme-info{
+    left: 100px;
+    top: 240px;
+    width: 570px;
+}
+.footer{
+    height: 120px;
+    color: #fff;
+    background-color: #253149;
+}
+.footer .content{
+    padding: 16px;
+}
+.footer .qr-code{
+    float: left;
+    margin: 10px 8px 0 0;
+    background-color: #fff;
+}
+.footer .qr-code-tip{
+    float: left;
+    margin-top: 66px;
+}
+.footer .copyright-info{
+    width: 330px;
+    margin-top: 15px;
+    line-height: 34px;
+}
+.footer .copyright li{
+    float: right;
+}
+.footer .copyright a{
+    color: #fff;
+    text-decoration: none;
+}
+.footer .copyright a:hover{
+    text-decoration: underline;
+}
+.footer .split-line{
+    margin: 0 10px;
+}
+.footer .companytip{
+    text-align: right;
+}
+
+
+/*------------------------related-------------------*/
+
+.area{
+    color: #387bbe;
+}
+.area-title{
+    height: 64px;
+    padding-left: 14px;
+    margin: 36px 0 26px 0;
+    border-left: 2px solid #387bbe;
+}
+.area-title h1{
+    font-size: 32px;
+}
+.area-title h3{
+    font-size: 18px;
+    margin-top: 26px;
+}
+.area .area-desc{
+    padding-left: 45px;
+    background: url(../img/related/icons.png) no-repeat 0 0;
+}
+.area .area-desc p{
+    line-height: 40px;
+    font-size: 18px;
+}
+.area-detail{
+    color: #000;
+    margin: 24px 0 86px 0;
+    line-height: 32px;
+}
+.area-detail .left{
+    width: 540px;
+    margin-left: 10px;
+    font-size: 18px;
+}
+.area-detail .area-detail-right{
+    margin-left: 32px;
+}
+.area .area-desc .smfont{
+    font-size: 14px;
+}
+.hotal.cur{
+    background-color: #387bbe;
+}
+.hotal.cur a{
+    cursor: default;
+}
+.area-paperbark .content{
+    background: url(../img/circle-bg.png) no-repeat right 0;
+}
+
+
+
+/*------------------------map-----------------------*/
+
+.map1, .map2, .map3, .map4{
+    height: 200px;
+}
+.map1{
+    background: url(../img/map/map1.png) no-repeat center 0;
+}
+.map2{
+    background: url(../img/map/map2.png) no-repeat center 0;
+}
+.map3{
+    background: url(../img/map/map3.png) no-repeat center 0;
+}
+.map4{
+    background: url(../img/map/map4.png) no-repeat center 0;
+}
+
+
+/*----------------------join------------------------*/
+
+.star-desc{
+    padding-top: 50px;
+    color: #387bbe;
+    font-size: 16px;
+    background: url(../img/circle-bg.png) #FFFFFF no-repeat 6px 87px;
+}
+.star-desc ul{
+    width: 1000px;
+    margin: 0 auto;
+}
+.star-desc li{
+    float: left;
+    width: 33.333%;
+}
+.star-desc li div{
+    width: 188px;
+    margin: 0 auto;
+    line-height: 50px;
+    font-weight: bold;
+    text-align: center;
+}
+.star-desc .star-desc-img{
+    height: 188px;
+    background-image: url(../img/join/join-circles.png);
+}
+.star-desc .photographer{
+    background-position: -60px -22px;
+}
+.star-desc .land{
+    background-position: -382px -22px;
+}
+.star-desc .us{
+    background-position: -708px -22px;
+}
+.area-joinus{
+    height: 400px;
+    margin-top: -20px;
+    background: url(../img/bg-2.png) no-repeat 986px 102px;
+}
+.company-info{
+    color: #ffffff;
+    height: 220px;
+    background-color: #387bbe;
+}
+.company-info .company-china,
+.company-info .company-england{
+    width: 50%;
+    float: left;
+}
+.company-info ul{
+    width: 446px;
+    margin: 58px auto 0;
+}
+.company-info li{
+    padding-left: 26px;
+    line-height: 24px;
+    font-size: 16px;
+    margin-top: 10px;
+    background: url(../img/join/icons.png) no-repeat;
+}
+.company-info .company-position{
+    background-position: -16px -18px;
+}
+.company-info .company-email{
+    background-position: -16px -72px;
+}
+.company-info .company-phone{
+    background-position: -16px -105px;
+}
+
+
+
+
+/*----------------------team------------------------*/
+
+.area-team{
+    margin-top: 60px;
+}
+.team-desc{
+    padding-top: 80px;
+    background: url(../img/circle-bg.png) #FFFFFF no-repeat -52px 5px;
+}
+.team-desc li{
+    float: left;
+    width: 33.3%;
+}
+.team-desc .team-user-name {
+    line-height: 50px;
+    font-weight: bold;
+    font-size: 26px;
+    color: #387bbe;
+    margin-top: 20px;
+}
+.team-desc .team-user-desc{
+    font-size: 16px;
+    line-height: 28px;
+}
+.area-team .area-detail{
+    margin-bottom: 0px;
+}
+.team-desc img{
+    border-radius: 110px;
+}
+.team-desc .team-user-detail{
+    width: 344px;
+    margin-top: 30px;
+    line-height: 24px;
+    word-break: break-word;
+}
+.team-info-bg{
+    background: url(../img/bg-2.png) no-repeat 986px 0px;
+    height: 320px;
+}
+
+
+/*-----------------------address------------------*/
+
+.locatioin-desc{
+    background: url(../img/circle-bg.png) #FFFFFF no-repeat -42px 60px;
+}
+.locatioin-desc .content{
+    height: 500px;
+    background: url(../img/address/location.png) no-repeat 700px 0px;
+}

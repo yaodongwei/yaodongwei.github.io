@@ -53,17 +53,31 @@ body{
 	margin: 0 auto;
 	position: relative;
 }
+.desc-tips{
+	height: 50px;
+	position: absolute;
+	width: 50px;
+	display: block;
+	top: 10px;
+	left: -4px;
+	cursor: pointer;
+	background-image: url(../img/home/btntip.png);
+	background-position: 0 0;
+}
+.desc-tips:hover{
+	background-position: -53.5px 0;
+}
 .whyme, .whatme, .whareme{
 	height: 700px;
 }
 .whyme{
-	background: url(../img/whyme.png) #222 no-repeat center 0;
+	background: url(../img/home/whyme.png) #222 no-repeat center 0;
 }
 .whatme{
-	background: url(../img/whatme.jpg) #222 no-repeat center 0;
+	background: url(../img/home/whatme.jpg) #222 no-repeat center 0;
 }
 .whareme{
-	background: url(../img/whareme.jpg) #222 no-repeat center 0;
+	background: url(../img/home/whareme.jpg) #222 no-repeat center 0;
 }
 .whyme .logoimg{
 	width: 220px;
@@ -79,7 +93,7 @@ body{
 	position: absolute;
 	padding: 30px 0 0 50px;
 	font-size: 16px;
-	background:  url(../img/btntip.png) no-repeat 0 0;
+	background: url(../img/home/info-line.png) no-repeat 42px 21px;
 }
 .whyme .whyme-info{
 	top: 200px;
@@ -102,22 +116,26 @@ body{
 	width: 570px;
 }
 .footer{
-	height: 100px;
+	height: 120px;
+	color: #fff;
 	background-color: #253149;
 }
-.footer .friend-link{
-	display: block;
+.footer .content{
+	padding: 16px;
+}
+.footer .qr-code{
 	float: left;
-	width: 72px;
-	height: 72px;
-	margin: 11px 20px 0 0;
+	margin: 10px 8px 0 0;
 	background-color: #fff;
+}
+.footer .qr-code-tip{
+	float: left;
+	margin-top: 66px;
 }
 .footer .copyright-info{
 	width: 330px;
 	margin-top: 15px;
 	line-height: 34px;
-	color: #fff;
 }
 .footer .copyright li{
 	float: right;
