@@ -1,0 +1,63 @@
+body{
+	font-family: STHeiti,
+		"Microsoft Yahei",
+		"Microsoft YaHei",
+		Arial, sans-serif;
+}
+.view-spot-entrance {
+	height: 130px;
+	background-color: #edefed;
+	line-height: 130px;
+	padding: 0 40px;
+}
+
+.view-spot-entrance h2 {
+	font-size: 42px;
+	color: #565a5c;
+	float: left;
+}
+
+.view-spot-entrance a {
+	float: right;
+	width: 60px;
+	height: 60px;
+	margin-top: 44px;
+	background: url(../img/icons.png) no-repeat -15px 0px;
+}
+
+.spot-show {
+	height: 240px;
+	position: relative;
+	overflow: hidden;
+}
+
+.spot-summary {
+	position: absolute;
+	bottom: 0;
+	padding: 0 30px 0 10px;
+	background-color: #f4ad26;
+}
+
+.spot-summary li {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	font-size: 30px;
+	margin-left: 20px;
+	float: left;
+	color: #FFF;
+	display: block;
+}
+
+.spot-summary li span{
+	font-size: 20px;
+}
+
+.spot-summary .spot-time {
+	padding-left: 45px;
+	background: url(../img/icons.png) no-repeat 0 -44px;
+}
+
+.spot-summary .spot-translator {
+	padding-left: 45px;
+	background: url(../img/icons.png) no-repeat 0 -137px;
+}
