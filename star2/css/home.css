@@ -4,6 +4,11 @@ body{
 		"Microsoft YaHei",
 		Arial, sans-serif;
 }
+
+.view-spot {
+	width: 640px;
+}
+
 .view-spot-entrance {
 	height: 130px;
 	background-color: #edefed;
@@ -21,13 +26,17 @@ body{
 	float: right;
 	width: 60px;
 	height: 60px;
-	margin-top: 44px;
+	margin-top: 38px;
 	background: url(../img/icons.png) no-repeat -15px 0px;
 }
 
 .spot-show {
 	height: 240px;
 	position: relative;
+}
+
+.spot-img-ctn {
+	height: 240px;
 	overflow: hidden;
 }
 
@@ -60,4 +69,118 @@ body{
 .spot-summary .spot-translator {
 	padding-left: 45px;
 	background: url(../img/icons.png) no-repeat 0 -137px;
+}
+
+.spot-show .contry-mark {
+	width: 120px;
+	height: 120px;
+	padding: 2px;
+	border-radius: 60px;
+	position: absolute;
+	right: 30px;
+	bottom: -30px;
+	background-color: #fff;
+}
+
+.spot-show .contry-mark img {
+	width: 120px;
+	height: 120px;
+	border-radius: 60px;
+}
+
+.spot-desc {
+	color: #565a5c;
+	padding: 34px 40px;
+	line-height: 34px;
+}
+
+.spot-desc h3 {
+	float: left;
+	font-size: 30px;
+}
+
+.spot-desc span {
+	float: right;
+	font-size: 24px;
+	padding-left: 48px;
+	background: url(../img/icons.png) no-repeat 0 -108px;
+}
+
+.spot-desc-content {
+	margin-top: 20px;
+	line-height: 32px;
+	font-size: 24px;
+}
+
+.view-spot .dest-show {
+	position: relative;
+	height: 300px;
+	overflow: hidden;
+}
+
+.dest-show .dest-name {
+	width: 42px;
+	font-size: 42px;
+	line-height: 40px;
+	color: #fff;
+	position: absolute;
+	top: 72px;
+	left: 50%;
+	margin-left: -20px;
+}
+
+.dest-show .spot-num {
+	position: absolute;
+	bottom: 30px;
+	left: 50%;
+	margin-left: -110px;
+	font-size: 24px;
+	color: #fff;
+}
+
+.dest-show .spot-num .spot-pro-num {
+	margin-left: 30px;
+}
+
+.company-info {
+	height: 580px;
+	background: url(../img/home/5.jpg) no-repeat 0 0;
+}
+
+.loc-head {
+	height: 312px;
+	position: relative;
+	margin-bottom: 20px;
+}
+
+.loc-head .loc-name {
+	font-size: 42px;
+	padding-left: 40px;
+	background: url(../img/icons.png) no-repeat 0 -100px;
+	position: absolute;
+	bottom: 30px;
+	left: 20px;
+	color: #fff;
+	line-height: 42px;
+}
+
+.loc-head .loc-name-en {
+	font-size: 30px;
+}
+
+.loc-head .contry-mark {
+	width: 90px;
+	height: 90px;
+	padding: 2px;
+	border-radius: 45px;
+	position: absolute;
+	right: 30px;
+	bottom: 20px;
+	background-color: #fff;
+}
+
+.loc-head .contry-mark img {
+	width: 90px;
+	height: 90px;
+	border-radius: 45px;
 }
