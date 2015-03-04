@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=640"/> 
+	<title>百度贴吧</title>
+	<link rel="shortcut icon" href="./favicon.ico" />
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/home.css">
+</head>
+<body class="detail-page">
+	<div class="view-spot">
+		<div class="spot-show detail-summary">
+			<div class="spot-img-ctn">
+				<img src="./img/home/3.png">
+			</div>
+			<div class="summary-mask"></div>
+			<div class="summary-tip">
+				<span class="summary-tip-close"></span>
+			</div>
+			<ul class="spot-summary">
+				<li class="spot-price">
+					<span>￥</span>4500<span>起</span>
+				</li>
+				<li class="spot-time">2<span>小时</span></li>
+			</ul>
+			<span class="detail-summary-name">瑞士 流森</span>
+		</div>
+	</div>
+	<div class="view-spot">
+		<div class="guide-summary clearfix">
+			<img class="guide-head" src="./img/home/2.jpg"></img>
+			<div class="guide-summary-info">
+				<div class="guide-name">Frederic</div>
+				<ul class="guide-infos">
+					<li>
+						<span class="guide-desc">区域</span>
+						<span class="guide-info">巴黎</span>
+					</li>
+					<li>
+						<span class="guide-desc">语言</span>
+						<span class="guide-info">EN | FR</span>
+					</li>
+					<li>
+						<span class="guide-desc">职业</span>
+						<span class="guide-info">厨师</span>
+					</li>
+					<li>
+						<span class="guide-desc">特长</span>
+						<span class="guide-info">面包烘培</span>
+					</li>
+				</ul>
+			</div>
+			<a href="#" class="guide-detail-enter"></a>
+		</div>
+	</div>
+	<div class="view-spot guide-detail">
+		<div class="guide-detail-info">
+			<ul class="guide-info-nav clearfix">
+				<li class="cur"><a class="guide-advantage" href="#">体验亮点</a></li>
+				<li class="cur"><a class="guide-plan" href="#">行程安排</a></li>
+				<li class="cur"><a class="guide-notice" href="#">预定须知</a></li>
+			</ul>
+		</div>
+	<script type="text/javascript" src="./js/zepto.min.js"></script>
+	<script type="text/javascript">
+		$('.summary-tip-close').bind('click', function(){
+			$('.summary-tip').hide();
+		});
+	</script>
+</body>
+</html>
