@@ -28,7 +28,7 @@ body{
 	width: 60px;
 	height: 60px;
 	margin-top: 38px;
-	background: url(../img/icons.png) no-repeat -15px 0px;
+	background: url(../img/icons.png) no-repeat -5px 0px;
 }
 
 .spot-show {
@@ -185,6 +185,7 @@ body{
 	height: 90px;
 	border-radius: 45px;
 }
+<<<<<<< HEAD
 
 /**-----------------------Product_list------------------------------**/
 
@@ -420,3 +421,5 @@ body{
 .guide-info-nav .guide-notice {
 	background-position: -280px -248px;
 }
+=======
+>>>>>>> f84dfd0d5c98cc0a32ff5fe30998db925ac8e849
