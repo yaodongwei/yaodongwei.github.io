@@ -106,8 +106,7 @@
 					var htE = height / viewportHeight;
 					
 					if(width == 0){
-						picMark = 1;
-						console.log(ele);
+						picMark = 1;//有时候图片还没有加载出来，所以在这做个标记，等到显示图片的时候根据这个标记判断是否要重新处理图片
 						return;
 					}
 
@@ -127,10 +126,6 @@
 						var toWid = widE;
 						var toHeight = htE;
 					}
-					console.log(ele);
-					console.log("width: "+ width + " "+maxE + " " +toWid + " " + (viewportHeight-toHeight)/2);
-					console.log("height: "+ height + " "+maxE + " " +toHeight);
-					$(ele).css('margin-top', (viewportHeight-toHeight)/2);
 				});
 			}
 			doPics();
