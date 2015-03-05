@@ -28,7 +28,7 @@ body{
 	width: 60px;
 	height: 60px;
 	margin-top: 38px;
-	background: url(../img/icons.png) no-repeat -5px 0px;
+	background: url(../img/icons.png) no-repeat -15px 0px;
 }
 
 .spot-show {
@@ -185,7 +185,6 @@ body{
 	height: 90px;
 	border-radius: 45px;
 }
-<<<<<<< HEAD
 
 /**-----------------------Product_list------------------------------**/
 
@@ -306,6 +305,7 @@ body{
 .summary-tip .summary-tip-close {
 	display: block;
 	width: 40px;
+	cursor: pointer;
 	height: 40px;
 	margin-left: 566px;
 	margin-top: 36px;
@@ -369,13 +369,13 @@ body{
 	margin-top: 20px;
 }
 
-.guide-detail .guide-detail-info {
+.guide-detail .guide-detail-info, .guide-plan-info .guide-plan-content, .guide-notice-content{
 	padding: 40px;
 }
 
 .guide-info-nav li {
 	float: left;
-	width: 175px;
+	width: 186px;
 	border-bottom: 2px solid #9a9c9d;
 }
 
@@ -407,19 +407,315 @@ body{
 }
 
 .guide-info-nav .cur .guide-plan {
-	background-position: -162px -132px;
+	background-position: -178px -132px;
 }
 
 .guide-info-nav .guide-plan {
-	background-position: -162px -248px;
+	background-position: -180px -248px;
 }
 
 .guide-info-nav .cur .guide-notice {
-	background-position: -262px -132px;
+	background-position: -300px -132px;
 }
 
 .guide-info-nav .guide-notice {
-	background-position: -280px -248px;
+	background-position: -304px -248px;
 }
-=======
->>>>>>> f84dfd0d5c98cc0a32ff5fe30998db925ac8e849
+
+.guide-advantage-content {
+	padding-left: 40px;
+	font-size: 24px;
+	padding-top: 26px;
+	line-height: 38px;
+	word-break : normal;
+	color: #565a5c;
+	background: url(../img/quotes.png) no-repeat -12px 22px;
+}
+
+.guide-plan-info, .guide-notice-info {
+	border-top: 1px solid #edefed;
+}
+
+.guide-plan-list {
+	line-height: 40px;
+	margin-top: 20px;
+	color: #565a5c;
+}
+
+.guide-plan-list li{
+	position: relative;
+	margin-bottom: 20px;
+}
+
+.guide-plan-title {
+	line-height: 32px;
+	font-size: 30px;
+	color: #ffb11b;
+	padding-left: 40px;
+	background: url(../img/tip.png) no-repeat -5px -8px;
+}
+
+.plan-item div, .plan-item-traffic div{
+	float: left;
+}
+
+.guide-plan-item-name {
+	padding-left: 40px;
+	font-size: 24px;
+	font-weight: bold;
+	width: 118px;
+	position: relative;
+	background: url(../img/tip.png);
+	background-repeat: no-repeat;
+}
+
+.plan-item .guide-plan-item-name{
+	background-position: -5px -94px;
+}
+
+.plan-item-traffic .guide-plan-item-name {
+	background-position: -5px -50px;
+}
+
+.guide-plan-item-content {
+	font-size: 24px;
+	width: 380px;
+}
+
+.plan-day{
+	position: absolute;
+	width: 46px;
+	height: 46px;
+	top: -4px;
+	left: -10px;
+	background: url(../img/tip.png) no-repeat 0px -143px;
+}
+
+.plan-item-desc .guide-plan-item-name{
+	background: none;
+	padding-left: 0;
+}
+
+.plan-item-desc{
+	padding-left: 40px;
+	background: url(../img/yellow-line.png) repeat-y 9px 0;
+}
+
+.plan-day .plan-day-num{
+	margin-top: 14px;
+	text-align: center;
+	font-size: 16px;
+	width: 46px;
+	color: #fff;
+}
+
+.plan-item-desc .guide-plan-item-content{
+	margin-left: 20px;
+}
+
+.plan-item-desc .guide-plan-item-name i{
+	position: absolute;
+	left: -38px;
+	width: 20px;
+	top: 7px;
+	height: 20px;
+	background: url(../img/icons.png) no-repeat -398px -85px;
+}
+
+.plan-item-desc img{
+	margin-top: 10px;
+}
+
+.guide-notice-info .guide-plan-title {
+	background: url(../img/tip.png) no-repeat -3px -206px;
+	margin-bottom: 15px;
+}
+
+.guide-notice-info{
+	font-size: 24px;
+	color: #565a5c;
+	line-height: 40px;
+}
+.guide-notice-item{
+	margin-bottom: 20px;
+}
+.guide-notice-tile{
+	font-weight: bold;
+	padding-left: 40px;
+}
+
+.guide-notice-desc{
+	padding-left: 40px;
+	background: url(../img/tip.png) no-repeat 8px -249px;
+}
+
+.guide-buy{
+	height: 120px;
+	color: #ffb11b;
+	font-size: 20px;
+	padding: 20px 40px;	
+	background-color: #edefed;
+}
+.guide-buy span{
+	font-size: 30px;
+}
+.guide-buy .buy-price{
+	margin: 40px 40px 0 10px;
+}
+
+.guide-buy a{
+	display: block;
+	float: left;
+	margin-left: 10px;
+	padding: 30px 155px;
+	border-radius: 10px;
+	text-decoration: none;
+	color: #fff;
+	font-size: 30px;
+	font-weight: bold;
+	background-color: #ffb11b;
+}
+.guide-buy div{
+	float: left;
+}
+
+
+/***********************Guide*****************************/
+
+.guider-summary {
+	position: relative;
+}
+
+.see-more-pic {
+	position: absolute;
+	top: 0;
+	cursor: pointer;
+	right: 20px;
+	width: 60px;
+	height: 60px;
+	background: url(../img/icons.png) no-repeat -120px -338px;
+}
+
+.close-more-pic {
+	float: right;
+	margin: 20px 20px 0 0;
+	font-size: 40px;
+	cursor: pointer;
+	color: #fff;
+	font-style: normal;
+}
+
+.guider-name {
+	position: absolute;
+	bottom: 40px;
+	left: 40px;
+	color: #fff;
+	line-height: 44px;
+	font-size: 42px;
+	font-weight: bold;
+}
+
+.guider-info {
+	padding: 40px;
+	color: #565a5c;
+}
+
+.guider-info .guide-infos li{
+	width: 240px;
+}
+
+.guider-info .guider-desc {
+	margin-top: 30px;
+	font-size: 24px;
+	line-height: 36px;
+}
+
+/*******************Guide-slider********************/
+
+.body {
+	position: relative;
+}
+
+.touchslider-viewport{
+	overflow: hidden;
+	width: 594px;
+}
+
+.pic-carousel{
+	width: 640px;
+	height: 100%;
+	visibility: hidden;
+	background: url(../img/opacity.png) repeat 0 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.pic-carousel .touchslider {
+	margin: 0 20px;
+}
+
+.pic-carousel-header{
+	height: 60px;
+}
+
+.touchslider-item {
+	float: left;
+	width: 594px;
+	overflow: hidden;
+	text-align: center;
+}
+
+.touchslider-item img {
+	display: inline-block;
+	margin: 0 auto;
+}
+
+.touchslider-nav {
+	text-align: center;
+	margin-top: 16px;
+}
+.touchslider-nav a {
+	cursor: pointer;
+	color: #000;
+}
+.touchslider-nav a:active {
+	background: #689db2;
+}
+
+.touchslider-nav {
+	font: bold 16px/16px Georgia;
+}
+
+.touchslider-next-in {
+	position: absolute; /* fix safari render font */
+	right: 10px;
+}
+.touchslider-prev-in {
+	position: absolute;
+	left: 10px;
+}
+.touchslider-nav-item {
+	width: 10px;
+	height: 10px;
+	background: #fff;
+	margin: 8px;
+	display: inline-block;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+}
+
+.touchslider-nav-item-current {
+	background: #ffb11b;
+}
+.touchslider-social .touchslider-nav {
+	text-align: center;
+	margin-bottom: 6px;
+}
+.touchslider-social .touchslider-nav-item {
+	opacity: .5;
+	padding: 0 2px;
+}
+.touchslider-social .touchslider-nav-item-current {
+	opacity: 1;
+}
