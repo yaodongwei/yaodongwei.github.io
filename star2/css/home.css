@@ -553,20 +553,20 @@ body{
 	height: 120px;
 	color: #ffb11b;
 	font-size: 20px;
-	padding: 20px 40px;	
 	background-color: #edefed;
 }
 .guide-buy span{
 	font-size: 30px;
 }
 .guide-buy .buy-price{
-	margin: 40px 40px 0 10px;
+	margin: 40px 40px 0 40px;
 }
 
 .guide-buy a{
+	display: none;
 	display: block;
 	float: left;
-	margin-left: 10px;
+	margin-top: 20px;
 	padding: 30px 155px;
 	border-radius: 10px;
 	text-decoration: none;
@@ -720,4 +720,82 @@ body{
 }
 .touchslider-social .touchslider-nav-item-current {
 	opacity: 1;
+}
+
+
+/********************Booking***************************/
+
+.booking-head{
+	position: relative;
+	height: 230px;
+	background-color: #edefed;
+}
+
+.return-back {
+	position: absolute;
+	left: 20px;
+	top: 30px;
+	width: 82px;
+	height: 82px;
+	background: url(../img/tip.png) no-repeat -7px -328px;
+}
+
+.booking-thanks{
+	text-transform: uppercase;
+	padding-top: 58px;
+	text-align: center;
+	color: #ffb11b;
+	font-size: 30px;
+	font-family: "Times New Roman", Arial;
+}
+
+.booking-thanks-desc{
+	text-align: center;
+	color: #565a5c;
+	font-size: 24px;
+	line-height: 34px;
+	margin-top: 43px;
+}
+
+.booking-form-dis {
+
+}
+
+.booking-form-wrap{
+	padding: 0 40px 30px;
+}
+
+.booking-form-wrap label {
+	display: block;
+	margin-top: 50px;
+	line-height: 30px;
+	font-size: 24px;
+	color: #565a5c;
+	text-align: center;
+}
+
+.booking-form-wrap input {
+	height: 50px;
+	margin-top: 30px;
+	width: 100%;
+	line-height: 40px;
+	font-size: 24px;
+	border: none;
+	border-bottom: 1px solid #ffb11b;
+}
+
+.pnum-wrap input{
+	width: 48%;
+}
+
+.pnum-wrap .pnum2{
+	margin-left: 3%;
+}
+
+.booking-form-wrap .submit {
+	background-color: #ffb11b;
+	border: none;
+	color: #fff;
+	border-radius: 10px;
+	margin-top: 50px;
 }

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=640"/> 
+	<title>星空下帐篷酒店</title>
+	<link rel="shortcut icon" href="./favicon.ico" />
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/home.css">
+</head>
+<body>
+	<div class="view-spot booking-head">
+		<div class="return-back"></div>
+		<p class="booking-thanks">Thanks for booking</p>
+		<p class="booking-thanks-desc">
+			感谢您预订“与顶级面包师的厨房邂逅”
+			<br/>我们会确认订单后和您联系
+		</p>
+	</div>
+	<div class="view-spot booking-form-dis">
+		<div class="booking-form-wrap">
+			<form name="booking-data" action="/submit">
+				<p>
+					<label for="date">选择日期</label>
+					<input type="date" required="required" class="date" placeholder="2014-01-13" id="date">
+				</p>
+				<p>
+					<label for="pnum1">参与人数</label>
+					<div class="pnum-wrap">
+						<input type="number" required="required" min=1 max=100 placeholder="成人" class="pnum1" id="pnum1">
+						<input type="number" required="required" min=0 max=100 placeholder="12岁以下儿童" class="pnum2" id="pnum2">
+					</div>
+				</p>
+				<p>
+					<label for="phone">联系电话</label>
+					<input type="number" required="required" placeholder="请输入手机号码" class="phone" id="phone">
+				</p>
+				<p>
+					<label for="message">留言给我</label>
+					<input class="message" placeholder="请把您的需求留言给我" id="message">
+				</p>
+				<p>
+					<input type="submit" class="submit" value="发送预定"/>
+				</p>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
