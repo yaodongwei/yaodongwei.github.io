@@ -643,6 +643,7 @@ body{
 }
 
 .pic-carousel{
+	z-index: 100;
 	width: 640px;
 	height: 100%;
 	visibility: hidden;

@@ -96,37 +96,54 @@
 	<script type="text/javascript" src="./js/jquery.touchslider.min.js"></script>
 	<script type="text/javascript">
 		$(function(){
+			var picMark = 0;
+			var viewportHeight = $(window).height()-120;
+			function doPics(){
+				$(".touchslider-item img").each(function(i, ele){
+					var height = $(ele).height();
+					var width = $(ele).width();
+					var widE = width / 594;
+					var htE = height / viewportHeight;
+					
+					if(width == 0){
+						picMark = 1;
+						console.log(ele);
+						return;
+					}
+
+					if( widE > htE) {
+						var maxE = widE;
+					} else {
+						var maxE = htE;
+					}
+
+					if(maxE > 1) {
+						var toWid = new Number(width/maxE).toFixed(4);
+						var toHeight = new Number(height/maxE).toFixed(4);
+						$(ele).height(parseFloat(toHeight));
+						$(ele).width(parseFloat(toWid));
+						console.log(height + ' '+maxE+' '+ toHeight);
+					}else{
+						var toWid = widE;
+						var toHeight = htE;
+					}
+					console.log(ele);
+					console.log("width: "+ width + " "+maxE + " " +toWid + " " + (viewportHeight-toHeight)/2);
+					console.log("height: "+ height + " "+maxE + " " +toHeight);
+					$(ele).css('margin-top', (viewportHeight-toHeight)/2);
+				});
+			}
+			doPics();
 			$('.see-more-pic').bind('click', function(){
+				if(picMark == 1) doPics();
 				$(".pic-carousel").css('visibility', 'visible');
 			});
 			$('.close-more-pic').bind('click', function(){
 				$(".pic-carousel").css('visibility', 'hidden');
 			});
-			var viewportHeight = $(window).height()-120;
+			
 			$(".touchslider-viewport, .touchslider-item").height(viewportHeight);
-			$(".touchslider-item img").each(function(i, ele){
-				var height = $(ele).height();
-				var width = $(ele).width();
-				var widE = new Number(width / 594).toFixed(4);
-				var htE = new Number(height / viewportHeight).toFixed(4);
-				if( widE > htE) {
-					var maxE = widE;
-				} else {
-					var maxE = htE;
-				}
-
-				if(maxE > 1) {
-					var toWid = new Number(width/maxE).toFixed(4);
-					var toHeight = new Number(height/maxE).toFixed(4);
-					$(ele).height(parseFloat(toHeight));
-					$(ele).width(parseFloat(toWid));
-					console.log(height + ' '+maxE+' '+ toHeight);
-				}else{
-					var toWid = widE;
-					var toHeight = htE;
-				}
-				$(ele).css('margin-top', (viewportHeight-toHeight)/2);
-			});
+			
 			$(".touchslider").touchSlider({
 				mouseTouch: true,
 				container: ".pic-carousel-cnt"
