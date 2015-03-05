@@ -98,11 +98,9 @@
 		$(function(){
 			$('.see-more-pic').bind('click', function(){
 				$(".pic-carousel").css('visibility', 'visible');
-				$("body").css("overflow-y", 'hidden');
 			});
 			$('.close-more-pic').bind('click', function(){
 				$(".pic-carousel").css('visibility', 'hidden');
-				$("body").css("overflow-y", 'scroll');
 			});
 			var viewportHeight = $(window).height()-120;
 			$(".touchslider-viewport, .touchslider-item").height(viewportHeight);
