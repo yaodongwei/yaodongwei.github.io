@@ -1,12 +1,11 @@
 body{
 	font-family: STHeiti,
 		"Microsoft Yahei",
-		"Microsoft YaHei",
 		Arial, sans-serif;
 }
 
 .view-spot {
-	width: 100%;
+	width: 640px;
 	background-color: #fff;
 }
 
@@ -197,26 +196,54 @@ body{
 	z-index: 10;
 }
 
-.tag-nav ul {
-	/*width: 640px;*/
-	width: 640px;
-	margin: 0px 40px 30px;
+.tag-nav {
+	height: 120px;
 }
 
-.tag-nav li {
+.tag-nav .turn-prev,
+.tag-nav .turn-next {
 	float: left;
-	margin-top: 30px;
+	width: 56px;
+	height: 36px;
+	text-align: center;
+	position: absolute;
+	top: 44px;
+	font-family: SimSun;
+	font-size: 32px;
+	line-height: 36px;
+	color: #929696;
+	cursor: pointer;
 }
 
-.tag-nav li a{
+.tag-nav .turn-prev {
+	left: 0px;
+}
+
+.tag-nav .turn-next {
+	right: 0px;
+}
+
+.tag-nav .touchslider-viewport{
+	width: 570px;
+	float: left;
+	margin: 0 35px;
+}
+
+.tag-nav .touchslider-item a {
 	display: block;
+	float: left;
 	font-size: 30px;
 	line-height: 30px;
 	color: #929696;
 	text-decoration: none;
-	padding: 16px 30px;
+	width: 198px;
+	padding: 16px 0;
+	text-align: center;
+	margin-top: 30px;
 }
-.tag-nav li a:hover, .tag-nav li.cur-nav a{
+
+.tag-nav .touchslider-item .cur-nav, 
+.tag-nav .touchslider-item a:hover {
 	background-color: #ffb11b;
 	color: #fff;
 }
@@ -224,28 +251,6 @@ body{
 .top-120 {
 	margin-top: 120px;
 }
-
-.nav-arrow {
-	z-index: 10;
-	top: 120px;
-	left: 10px;
-	width: 78px;
-	height: 46px;
-	position: fixed;
-	background: url(../img/icons.png) no-repeat -146px -76px;
-}
-
-.arrow-turn {
-	top: 220px;
-	-webkit-transform: rotate(180deg);
-	-moz-transform: rotate(180deg);
-	-ms-transform: rotate(180deg);
-	-o-transform: rotate(180deg);
-	transform: rotate(180deg)
-}
-
-
-
 
 
 
@@ -285,8 +290,7 @@ body{
 
 .summary-mask {
 	height: 300px;
-	/*width: 640px;*/
-	width: 100%;
+	width: 640px;
 	background: url(../img/home/2.png) no-repeat left bottom;
 	position: absolute;
 	top: 0;
@@ -300,8 +304,7 @@ body{
 	z-index: 10;
 	background-color: #ffb11b;
 	height: 110px;
-	/*width: 640px;*/
-	width: 100%;
+	width: 640px;
 	background: url(../img/home/4.png) no-repeat 0 0;
 }
 
@@ -647,7 +650,6 @@ body{
 
 .pic-carousel{
 	z-index: 100;
-	/*width: 640px;*/
 	width: 640px;
 	height: 100%;
 	visibility: hidden;
@@ -802,4 +804,14 @@ body{
 	color: #fff;
 	border-radius: 10px;
 	margin-top: 50px;
+}
+
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
 }

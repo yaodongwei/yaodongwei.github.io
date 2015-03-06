@@ -10,18 +10,25 @@
 </head>
 <body>
 	<div class="view-spot tag-nav-cnt">
-		<div class="tag-nav">
-			<ul class="clearfix">
-				<li class="cur-nav"><a href="">熊孩子</a></li>
-				<li><a href="">穿越系</a></li>
-				<li><a href="">爷们儿的玩具</a></li>
-				<li><a href="">熊孩子</a></li>
-				<li><a href="">穿越系</a></li>
-				<li><a href="">爷们儿的玩具</a></li>
-			</ul>
+		<div class="touchslider tag-nav">
+			<div class="turn-prev">&lt;</div>
+			<div class="touchslider-viewport" style="">
+				<div>
+					<div class="touchslider-item">
+						<a href="" class="cur-nav">熊孩子</a>
+						<a href="">穿越系</a>
+						<a href="">好玩的</a>
+					</div>
+					<div class="touchslider-item">
+						<a href="">熊孩子</a>
+						<a href="">穿越系</a>
+						<a href="">好玩的</a>
+					</div>
+				</div>
+			</div>
+			<div class="turn-next">&gt;</div>
 		</div>
 	</div>
-	<div class="nav-arrow"></div>
 	<div class="view-spot top-120">
 		<div class="item">
 			<div class="spot-show">
@@ -96,19 +103,14 @@
 			</div>
 		</div>
 	</div>
-	<script type="text/javascript" src="./js/zepto.min.js"></script>
+	<script type="text/javascript" src="./js/jquery-1.6.3.min.js"></script>
+	<script type="text/javascript" src="./js/jquery.touchslider.min.js"></script>
 	<script type="text/javascript">
-		var navStatus = 0;
-		$('.nav-arrow').bind('click', function(){
-			if( navStatus == 0 ) {
-				navStatus = 1;
-				$('.tag-nav-cnt').height( 220 );
-				$(this).addClass('arrow-turn');
-			} else {
-				navStatus = 0;
-				$('.tag-nav-cnt').height( 120 );
-				$(this).removeClass('arrow-turn');
-			}
+		$(".touchslider").touchSlider({
+			mouseTouch: true,
+			next: ".turn-next",
+			prev: ".turn-prev",
+			container: ".tag-nav-cnt"
 		});
 	</script>
 </body>
