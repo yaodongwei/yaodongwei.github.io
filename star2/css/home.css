@@ -9,6 +9,11 @@ body{
 	background-color: #fff;
 }
 
+.view-spot .item{
+	display: block;
+	text-decoration: none;
+}
+
 .view-spot-entrance {
 	height: 130px;
 	background-color: #edefed;
@@ -61,6 +66,10 @@ body{
 	font-size: 20px;
 }
 
+.spot-summary .price-icon{
+	font-size: 28px;
+}
+
 .spot-summary .spot-time {
 	padding-left: 45px;
 	background: url(../img/icons.png) no-repeat 0 -44px;
@@ -90,7 +99,7 @@ body{
 
 .spot-desc {
 	color: #565a5c;
-	padding: 34px 40px;
+	padding: 34px 20px;
 	line-height: 34px;
 }
 
@@ -123,12 +132,14 @@ body{
 	position: relative;
 	height: 300px;
 	overflow: hidden;
+	text-shadow: 1px 1px 6px #a4a4a4;
 }
 
 .dest-show .dest-name {
 	width: 42px;
 	font-size: 42px;
 	line-height: 40px;
+	font-weight: bold;
 	color: #fff;
 	position: absolute;
 	top: 72px;
@@ -163,7 +174,7 @@ body{
 .loc-head .loc-name {
 	font-size: 42px;
 	padding-left: 40px;
-	background: url(../img/icons.png) no-repeat 0 -100px;
+	background: url(../img/tip.png) no-repeat 0px -88px;
 	position: absolute;
 	bottom: 30px;
 	left: 20px;
@@ -392,8 +403,9 @@ body{
 	border-bottom: 2px solid #9a9c9d;
 }
 
-.guide-info-nav li a {
+.guide-info-nav li span {
 	display: block;
+	cursor: pointer;
 	color: #9a9c9d;
 	padding: 60px 0 30px;
 	text-align: center;
@@ -447,6 +459,10 @@ body{
 
 .guide-plan-info, .guide-notice-info {
 	border-top: 1px solid #edefed;
+}
+
+.bottom120{
+	height: 120px;
 }
 
 .guide-plan-list {
@@ -530,7 +546,7 @@ body{
 	position: absolute;
 	left: -38px;
 	width: 20px;
-	top: 7px;
+	top: 6px;
 	height: 20px;
 	background: url(../img/icons.png) no-repeat -398px -85px;
 }
@@ -566,13 +582,16 @@ body{
 	height: 120px;
 	color: #ffb11b;
 	font-size: 20px;
+	position: fixed;
+	bottom: 0;
+	left: 0;
 	background-color: #edefed;
 }
 .guide-buy span{
 	font-size: 30px;
 }
 .guide-buy .buy-price{
-	margin: 40px 40px 0 40px;
+	margin: 60px 40px 0 40px;
 }
 
 .guide-buy a{

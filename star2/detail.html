@@ -6,7 +6,7 @@
 	<title>百度贴吧</title>
 	<link rel="shortcut icon" href="./favicon.ico" />
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
-	<link rel="stylesheet" type="text/css" href="css/home.css">
+	<link rel="stylesheet" type="text/css" href="css/home.css?v=1">
 </head>
 <body class="detail-page">
 	<div class="view-spot">
@@ -20,7 +20,7 @@
 			</div>
 			<ul class="spot-summary">
 				<li class="spot-price">
-					<span>￥</span>4500<span>起</span>
+					<span class="price-icon">￥</span>4500<span>起</span>
 				</li>
 				<li class="spot-time">2<span>小时</span></li>
 			</ul>
@@ -57,9 +57,9 @@
 	<div class="view-spot guide-detail">
 		<div class="guide-detail-info">
 			<ul class="guide-info-nav clearfix">
-				<li class="cur"><a class="guide-advantage" href="#">体验亮点</a></li>
-				<li class=""><a class="guide-plan" href="#plan">行程安排</a></li>
-				<li class=""><a class="guide-notice" href="#notice">预定须知</a></li>
+				<li class="cur"><span class="guide-advantage">体验亮点</span></li>
+				<li class=""><span class="guide-plan">行程安排</span></li>
+				<li class=""><span class="guide-notice">预定须知</span></li>
 			</ul>
 			<div class="guide-advantage-content">
 				师从法国甜点大师Gaston Lenôtre，在26岁时就获得了面包烘焙工艺的法国最佳手工艺者Meilleur Ouvrier de France的荣誉称号，从而成为法国历史上最年轻的高级面包师。之后，他有幸为法国总理在其官邸烘培面包与甜点。1999年，他和一位同仁开设了面包店，并开始为巴黎的米其林星级餐厅供应面包与糕点，包括米其林三星主厨Yannick Alléno在内的共18颗米其林星的主厨餐厅。
@@ -67,7 +67,6 @@
 		</div>
 	</div>
 	<div class="view-spot guide-plan-info">
-		<a name="plan"></a>
 		<div class="guide-plan-content">
 			<h2 class="guide-plan-title">行程安排</h2>
 			<ul class="guide-plan-list">
@@ -93,7 +92,6 @@
 		</div>
 	</div>
 	<div class="view-spot guide-notice-info">
-		<a name="notice"></a>
 		<div class="guide-notice-content">
 			<h2 class="guide-plan-title">预订须知</h2>
 			<div class="guide-notice-item">
@@ -116,6 +114,8 @@
 			</div>
 		</div>
 	</div>
+	<div class="view-spot bottom120">
+	</div>
 	<div class="view-spot guide-buy">
 		<div class="buy-price">
 			￥<span>4500</span>起/每人
@@ -124,9 +124,17 @@
 	</div>
 	<script type="text/javascript" src="./js/zepto.min.js"></script>
 	<script type="text/javascript">
-		$('.summary-tip-close').bind('click', function(){
-			$('.summary-tip').hide();
-		});
+		$(function(){
+			$('.summary-tip-close').bind('click', function(){
+				$('.summary-tip').hide();
+			});
+			$(".guide-plan").click(function(event) {
+				$(window).scrollTop($(".guide-plan-info").offset().top);
+			});
+			$(".guide-notice").click(function(event) {
+				$(window).scrollTop($(".guide-notice-info").offset().top);
+			});
+		})
 	</script>
 </body>
 </html>
