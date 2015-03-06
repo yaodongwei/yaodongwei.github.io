@@ -6,7 +6,7 @@ body{
 }
 
 .view-spot {
-	width: 640px;
+	width: 100%;
 	background-color: #fff;
 }
 
@@ -198,6 +198,7 @@ body{
 }
 
 .tag-nav ul {
+	/*width: 640px;*/
 	width: 640px;
 	margin: 0px 40px 30px;
 }
@@ -284,7 +285,8 @@ body{
 
 .summary-mask {
 	height: 300px;
-	width: 640px;
+	/*width: 640px;*/
+	width: 100%;
 	background: url(../img/home/2.png) no-repeat left bottom;
 	position: absolute;
 	top: 0;
@@ -298,7 +300,8 @@ body{
 	z-index: 10;
 	background-color: #ffb11b;
 	height: 110px;
-	width: 640px;
+	/*width: 640px;*/
+	width: 100%;
 	background: url(../img/home/4.png) no-repeat 0 0;
 }
 
@@ -644,6 +647,7 @@ body{
 
 .pic-carousel{
 	z-index: 100;
+	/*width: 640px;*/
 	width: 640px;
 	height: 100%;
 	visibility: hidden;
