@@ -371,11 +371,16 @@ body{
 
 .guide-infos .guide-desc {
 	font-size: 20px;
+	float: left;
+	display: inline-block;
 	color: #ffb11b;
 }
 
 .guide-infos .guide-info {
 	font-size: 24px;
+	display: inline-block;
+	width: 170px;
+	float: left;
 	margin-left: 15px;
 }
 
@@ -575,7 +580,7 @@ body{
 
 .guide-notice-desc{
 	padding-left: 40px;
-	background: url(../img/tip.png) no-repeat 8px -249px;
+	background: url(../img/yellow-dot.png) no-repeat 8px -4px;
 }
 
 .guide-buy{
@@ -649,7 +654,7 @@ body{
 }
 
 .guider-info {
-	padding: 40px;
+	padding: 40px 20px;
 	color: #565a5c;
 }
 
