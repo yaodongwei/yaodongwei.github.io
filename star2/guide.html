@@ -9,11 +9,23 @@
 	<link rel="stylesheet" type="text/css" href="css/home.css">
 </head>
 <body>
-	<div class="view-spot">
-		<div class="guider-summary">
-			<img src="./img/home/5.png" width=640 height=826 >
+	<div class="view-spot pic-carousel pic-carousel-cnt">
+		<div class="touchslider">
+			<div class="touchslider-viewport" style="">
+				<div style="width:640px;overflow:hidden">
+					<div class="touchslider-item"><img src="./img/home/1.png" width="640" height="827"></div>
+					<div class="touchslider-item"><img src="./img/home/3.png" width="640" height="827"></div>
+					<div class="touchslider-item"><img src="./img/home/5.png" width="640" height="827"></div>
+					<div class="touchslider-item"><img src="./img/home/6.png" width="640" height="827"></div>
+				</div>
+			</div>
+			<div class="touchslider-nav">
+				<span class="touchslider-nav-item touchslider-nav-item-current"></span>
+				<span class="touchslider-nav-item"></span>
+				<span class="touchslider-nav-item"></span>
+				<span class="touchslider-nav-item"></span>
+			</div>
 			<div class='guider-name'>习近平</div>
-			<i class="see-more-pic"></i>
 		</div>
 	</div>
 	<div class="view-spot">
@@ -71,40 +83,19 @@
 			</div>
 		</a>
 	</div>
-	<div class="view-spot pic-carousel">
-		<div class="pic-carousel-header">
-			<i class="close-more-pic">×</i>
-		</div>
-		<div class="touchslider">
-			<div class="touchslider-viewport" style="">
-				<div style="width:640px;overflow:hidden">
-					<div class="touchslider-item"><img src="./img/home/1.png"></div>
-					<div class="touchslider-item"><img src="./img/home/3.png"></div>
-					<div class="touchslider-item"><img src="./img/home/5.png"></div>
-					<div class="touchslider-item"><img src="./img/home/6.png"></div>
-				</div>
-			</div>
-			<div class="touchslider-nav">
-				<span class="touchslider-nav-item touchslider-nav-item-current"></span>
-				<span class="touchslider-nav-item"></span>
-				<span class="touchslider-nav-item"></span>
-				<span class="touchslider-nav-item"></span>
-			</div>
-		</div>
-	</div>
 	<script type="text/javascript" src="./js/jquery-1.6.3.min.js"></script>
 	<script type="text/javascript" src="./js/jquery.touchslider.min.js"></script>
 	<script type="text/javascript">
 		$(function(){
+			/**var viewportHeight = $(window).height()-120;
 			var picMark = 0;
-			var viewportHeight = $(window).height()-120;
 			function doPics(){
 				$(".touchslider-item img").each(function(i, ele){
 					var height = $(ele).height();
 					var width = $(ele).width();
 					var widE = width / 594;
 					var htE = height / viewportHeight;
-					
+
 					if(width == 0){
 						picMark = 1;//有时候图片还没有加载出来，所以在这做个标记，等到显示图片的时候根据这个标记判断是否要重新处理图片
 						return;
@@ -121,23 +112,27 @@
 						var toHeight = new Number(height/maxE).toFixed(4);
 						$(ele).height(parseFloat(toHeight));
 						$(ele).width(parseFloat(toWid));
-						console.log(height + ' '+maxE+' '+ toHeight);
+						console.log(viewportHeight + ' ' + height + ' '+maxE+' '+ toHeight);
 					}else{
 						var toWid = widE;
 						var toHeight = htE;
 					}
+					console.log(viewportHeight-toHeight);
 					$(ele).css('margin-top', (viewportHeight-toHeight)/2);
 				});
 			}
-			doPics();
+			//doPics();
 			$('.see-more-pic').bind('click', function(){
-				if(picMark == 1) doPics();
+				//doPics();
+				$('body').css("overflow","hidden")
 				$(".pic-carousel").css('visibility', 'visible');
 			});
 			$('.close-more-pic').bind('click', function(){
+				$('body').css("overflow","scroll")
 				$(".pic-carousel").css('visibility', 'hidden');
 			});
-			
+*/
+			$(".touchslider-viewport, .touchslider-item").height(827);
 			$(".touchslider").touchSlider({
 				mouseTouch: true,
 				container: ".pic-carousel-cnt"
