@@ -79,3 +79,10 @@ summary, time, mark, audio, video {
 .clearfix {
     zoom:1
 }
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button {
+	-webkit-appearance: none;
+}
