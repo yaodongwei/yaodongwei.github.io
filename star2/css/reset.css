@@ -83,6 +83,7 @@ summary, time, mark, audio, video {
 input[type="submit"],
 input[type="reset"],
 input[type="button"],
+input[type="date"],
 button {
 	-webkit-appearance: none;
 }
