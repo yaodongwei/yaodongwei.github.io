@@ -111,7 +111,7 @@ body{
 .spot-desc span {
 	float: right;
 	font-size: 24px;
-	padding-left: 48px;
+	padding-left: 36px;
 	background: url(../img/tip.png) no-repeat 0px -95px;
 }
 
@@ -220,17 +220,12 @@ body{
 
 .tag-nav .turn-prev,
 .tag-nav .turn-next {
-	float: left;
-	width: 56px;
-	height: 36px;
-	text-align: center;
+	width: 40px;
+	height: 40px;
 	position: absolute;
-	top: 48px;
-	font-family: SimSun;
-	font-size: 32px;
-	line-height: 36px;
-	color: #929696;
+	top: 45px;
 	cursor: pointer;
+	background: url(../img/icon.png) no-repeat 10px 10px;
 }
 
 .hide{
@@ -238,7 +233,8 @@ body{
 }
 
 .tag-nav .turn-prev {
-	left: 0px;
+	left: -4px;
+	transform: rotate(180deg);
 }
 
 .tag-nav .turn-next {
@@ -258,7 +254,7 @@ body{
 	line-height: 90px;
 	color: #929696;
 	text-decoration: none;
-	width: 198px;
+	width: 186px;
 	margin-top: 20px;
 	text-align: center;
 }
@@ -299,14 +295,14 @@ body{
 
 .detail-summary-name {
 	position: absolute;
-	bottom: 20px;
+	bottom: 16px;
 	right: 40px;
 	font-size: 24px;
 	line-height: 32px;
 	color: #fff;
 	z-index: 2;
 	padding-left: 48px;
-	background: url(../img/dist.png) no-repeat 2px -4px;
+	background: url(../img/dist.png) no-repeat 2px -5px;
 }
 
 .summary-mask {
@@ -370,7 +366,7 @@ body{
 }
 
 .guide-infos li {
-	width: 175px;
+	width: 350px;
 	float: left;
 	line-height: 40px;
 }
@@ -670,7 +666,7 @@ body{
 }
 
 .guider-info .guide-infos li{
-	width: 240px;
+	width: 300px;
 }
 
 .guider-info .guider-desc {
