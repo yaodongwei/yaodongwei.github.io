@@ -11,8 +11,18 @@
 <body class="detail-page">
 	<div class="view-spot">
 		<div class="spot-show detail-summary">
-			<div class="spot-img-ctn">
-				<img src="./img/home/3.png">
+			<div class="spot-img-ctn pic-carousel">
+				
+				<div class="touchslider">
+					<div class="touchslider-viewport" style="">
+						<div style="width:640px;">
+							<div class="touchslider-item"><img src="./img/home/3.png" width="640" height="300"></div>
+							<div class="touchslider-item"><img src="./img/home/3.png" width="640" height="300"></div>
+							<div class="touchslider-item"><img src="./img/home/3.png" width="640" height="300"></div>
+							<div class="touchslider-item"><img src="./img/home/3.png" width="640" height="300"></div>
+						</div>
+					</div>
+				</div>				
 			</div>
 			<div class="summary-mask"></div>
 			<div class="summary-tip">
@@ -122,7 +132,8 @@
 		</div>
 		<a href="#">预定</a>
 	</div>
-	<script type="text/javascript" src="./js/zepto.min.js"></script>
+	<script type="text/javascript" src="./js/jquery-1.6.3.min.js"></script>
+	<script type="text/javascript" src="./js/jquery.touchslider.min.js"></script>
 	<script type="text/javascript">
 		$(function(){
 			$('.summary-tip-close').bind('click', function(){
@@ -133,6 +144,13 @@
 			});
 			$(".guide-notice").click(function(event) {
 				$(window).scrollTop($(".guide-notice-info").offset().top);
+			});
+			$(".touchslider-viewport, .touchslider-item").height(300);
+			$(".touchslider").touchSlider({
+				mouseTouch: true,
+				autoplay: true,
+				duration: 1000,
+				container: ".spot-img-ctn"
 			});
 		})
 	</script>
