@@ -11,6 +11,6 @@
 				$("#showName").html(userData.user_name);
 			}
 		</script>
-		<iframe src="javascript:'<script>function JSON(o){alert(o.userinfo.userid);}</script><script src=http://127.0.0.1/getUser.php?callback=showName></script>'"></iframe>
+		<iframe src="javascript:'<script>function JSON(o){alert(o.userinfo.userid);}</script><script src=http://127.0.0.1/getUser.php?callback=parent.showName></script>'"></iframe>
 	</body>
 </html>
