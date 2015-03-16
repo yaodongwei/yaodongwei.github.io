@@ -6,7 +6,7 @@
 	<title>百度贴吧</title>
 	<link rel="shortcut icon" href="./favicon.ico" />
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
-	<link rel="stylesheet" type="text/css" href="css/home.css?v=1">
+	<link rel="stylesheet" type="text/css" href="css/home.css?v=2">
 </head>
 <body class="detail-page">
 	<div class="view-spot">
@@ -150,7 +150,7 @@
 	
 		$(function(){
 			var picMark = 0;
-			var viewportHeight = $(window).height()-120;
+			var viewportHeight = $(window).height()-100;
 			$(".touchslider-viewport, .touchslider-item").height(viewportHeight);
 			$(".touchslider-item img").each(function(i, ele){
 				var height = $(ele).height();
@@ -169,11 +169,11 @@
 					var toHeight = new Number(height/maxE).toFixed(4);
 					$(ele).height(parseFloat(toHeight));
 					$(ele).width(parseFloat(toWid));
-					console.log(viewportHeight + ' ' + height + ' '+maxE+' '+ toHeight);
-				}else{
-					var toWid = widE;
-					var toHeight = htE;
+				} else {
+					var toWid = width;
+					var toHeight = height;
 				}
+				console.log(height + ' 2 '+ toHeight);
 				
 				$(ele).css('margin-top', (viewportHeight-toHeight)/2);
 			});
