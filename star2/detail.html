@@ -11,18 +11,9 @@
 <body class="detail-page">
 	<div class="view-spot">
 		<div class="spot-show detail-summary">
-			<div class="spot-img-ctn pic-carousel">
-				
-				<div class="touchslider">
-					<div class="touchslider-viewport" style="">
-						<div style="width:640px;">
-							<div class="touchslider-item"><img src="./img/home/3.png" width="640" height="300"></div>
-							<div class="touchslider-item"><img src="./img/home/3.png" width="640" height="300"></div>
-							<div class="touchslider-item"><img src="./img/home/3.png" width="640" height="300"></div>
-							<div class="touchslider-item"><img src="./img/home/3.png" width="640" height="300"></div>
-						</div>
-					</div>
-				</div>				
+			<div class="datail-head">
+				<img src="./img/home/3.png" width="640" height="300">
+				<div class="see-more-pic"></div>
 			</div>
 			<div class="summary-mask"></div>
 			<div class="summary-tip">
@@ -132,10 +123,76 @@
 		</div>
 		<a href="#">预定</a>
 	</div>
+	<div class="view-spot pic-carousel">
+		<div class="pic-carousel-header">
+			<i class="close-more-pic">×</i>
+		</div>
+		<div class="touchslider">
+			<div class="touchslider-viewport" style="">
+				<div class="touchslider-pics">
+					<div class="touchslider-item"><img src="./img/home/1.png" width="640" height="298"></div>
+					<div class="touchslider-item"><img src="./img/home/3.png" width="640" height="350"></div>
+					<div class="touchslider-item"><img src="./img/home/5.png" width="640" height="1203"></div>
+					<div class="touchslider-item"><img src="./img/home/6.png" width="640" height="321"></div>
+				</div>
+			</div>
+			<div class="touchslider-nav">
+				<span class="touchslider-nav-item touchslider-nav-item-current"></span>
+				<span class="touchslider-nav-item"></span>
+				<span class="touchslider-nav-item"></span>
+				<span class="touchslider-nav-item"></span>
+			</div>
+		</div>
+	</div>
 	<script type="text/javascript" src="./js/jquery-1.6.3.min.js"></script>
 	<script type="text/javascript" src="./js/jquery.touchslider.min.js"></script>
 	<script type="text/javascript">
+	
 		$(function(){
+			var picMark = 0;
+			var viewportHeight = $(window).height()-120;
+			$(".touchslider-viewport, .touchslider-item").height(viewportHeight);
+			$(".touchslider-item img").each(function(i, ele){
+				var height = $(ele).height();
+				var width = $(ele).width();
+				var widE = width / 594;
+				var htE = height / viewportHeight;
+
+				if( widE > htE) {
+					var maxE = widE;
+				} else {
+					var maxE = htE;
+				}
+
+				if(maxE > 1) {
+					var toWid = new Number(width/maxE).toFixed(4);
+					var toHeight = new Number(height/maxE).toFixed(4);
+					$(ele).height(parseFloat(toHeight));
+					$(ele).width(parseFloat(toWid));
+					console.log(viewportHeight + ' ' + height + ' '+maxE+' '+ toHeight);
+				}else{
+					var toWid = widE;
+					var toHeight = htE;
+				}
+				
+				$(ele).css('margin-top', (viewportHeight-toHeight)/2);
+			});
+			
+			$(".touchslider").touchSlider({
+				mouseTouch: true,
+			});
+			
+			$('.see-more-pic').bind('click', function(){
+			//	$('body').css("overflow","hidden");
+				$(".pic-carousel").show();
+			});
+			
+			$('.close-more-pic').bind('click', function(){
+			//	$('body').css("overflow","scroll");
+				$(".pic-carousel").hide();
+			});
+		
+		
 			$('.summary-tip-close').bind('click', function(){
 				$('.summary-tip').hide();
 			});
@@ -145,13 +202,7 @@
 			$(".guide-notice").click(function(event) {
 				$(window).scrollTop($(".guide-notice-info").offset().top);
 			});
-			$(".touchslider-viewport, .touchslider-item").height(300);
-			$(".touchslider").touchSlider({
-				mouseTouch: true,
-				autoplay: true,
-				duration: 1000,
-				container: ".spot-img-ctn"
-			});
+		
 		})
 	</script>
 </body>

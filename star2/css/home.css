@@ -627,6 +627,30 @@ body{
 	float: left;
 }
 
+.detail-page .touchslider-viewport{
+	overflow: hidden;
+	width: 594px;
+}
+
+.detail-page .see-more-pic{
+	z-index: 5;
+}
+
+.detail-page .pic-carousel{
+	width: 640px;
+	height: 100%;
+	display: none;
+	z-index: 100;
+	background: url(../img/opacity.png) repeat 0 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+.touchslider-pics {
+	overflow:hidden;
+	
+}
 
 /***********************Guide*****************************/
 
@@ -696,10 +720,6 @@ body{
 	width: 640px;
 	position: relative;
 	height: 100%;
-}
-
-.detail-page .pic-carousel{
-	z-index: 0;
 }
 
 .pic-carousel-header{
