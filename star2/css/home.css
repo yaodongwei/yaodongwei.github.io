@@ -660,9 +660,9 @@ body{
 
 .see-more-pic {
 	position: absolute;
-	top: 0;
+	top: 5px;
 	cursor: pointer;
-	right: 20px;
+	right: 10px;
 	width: 60px;
 	height: 60px;
 	background: url(../img/icons.png) no-repeat -120px -338px;
