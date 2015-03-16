@@ -172,6 +172,10 @@ body{
 	margin-bottom: 20px;
 }
 
+.location-detail .summary-mask{
+	height: 312px;
+}
+
 .loc-head .loc-name {
 	font-size: 42px;
 	padding-left: 40px;
@@ -179,6 +183,7 @@ body{
 	position: absolute;
 	bottom: 30px;
 	left: 20px;
+	z-index: 2;
 	color: #fff;
 	line-height: 42px;
 }
@@ -193,6 +198,7 @@ body{
 	padding: 2px;
 	border-radius: 45px;
 	position: absolute;
+	z-index: 2;
 	right: 30px;
 	bottom: 20px;
 	background-color: #fff;
