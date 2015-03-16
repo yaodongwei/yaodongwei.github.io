@@ -638,7 +638,7 @@ body{
 .detail-page .pic-carousel{
 	width: 640px;
 	height: 100%;
-	
+	display: none;
 	z-index: 100;
 	background: url(../img/opacity.png) repeat 0 0;
 	position: fixed;
