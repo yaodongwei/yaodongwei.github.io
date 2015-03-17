@@ -873,7 +873,7 @@ body{
 
 .pnum-wrap .radio{
 	margin-top: 0px;
-	height: 22px;
+	height: 30px;
 	margin-right: 10px;
 	vertical-align: text-bottom;
 	width: 30px;
@@ -888,6 +888,7 @@ body{
 
 .pnum-wrap .s-label{
 	margin-top: 0px;
+	color: #A9A9BB;
 	width: 30px;
 	display: inline-block;
 }
