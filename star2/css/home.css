@@ -839,16 +839,15 @@ body{
 
 .booking-form-wrap label {
 	display: block;
-	margin-top: 50px;
+	margin-top: 40px;
 	line-height: 30px;
 	font-size: 24px;
 	color: #565a5c;
-	text-align: center;
 }
 
 .booking-form-wrap input {
 	height: 50px;
-	margin-top: 30px;
+	margin-top: 12px;
 	width: 100%;
 	line-height: 40px;
 	font-size: 24px;
@@ -870,6 +869,27 @@ body{
 	color: #fff;
 	border-radius: 10px;
 	margin-top: 50px;
+}
+
+.pnum-wrap .radio{
+	margin-top: 0px;
+	height: 22px;
+	margin-right: 10px;
+	vertical-align: text-bottom;
+	width: 30px;
+	display: inline-block;
+}
+#male{
+	margin-left: 20px;
+}
+#female{
+	margin-left: 90px;
+}
+
+.pnum-wrap .s-label{
+	margin-top: 0px;
+	width: 30px;
+	display: inline-block;
 }
 
 input[type='number'] {

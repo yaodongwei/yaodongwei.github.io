@@ -22,6 +22,14 @@
 		<div class="booking-form-wrap">
 			<form name="booking-data" action="/submit">
 				<p>
+					<label for="pnum1">预定人</label>
+					<div class="pnum-wrap">
+						<input type="text" required="required" name="name" min=1 max=100 placeholder="姓名" class="pnum1" id="pnum1">
+						<input type="radio" class="radio" id="male" value="1" checked="checked" name="sex"/><label class="s-label" for="male">男</label>
+						<input type="radio" class="radio" id="female" value="female" name="sex"/><label class="s-label" for="female">女</label>
+					</div>
+				</p>
+				<p>
 					<label for="date">选择日期</label>
 					<input type="date" required="required" class="date" placeholder="2014-01-13" id="date">
 				</p>
