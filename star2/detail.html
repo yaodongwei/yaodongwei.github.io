@@ -6,7 +6,7 @@
 	<title>百度贴吧</title>
 	<link rel="shortcut icon" href="./favicon.ico" />
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
-	<link rel="stylesheet" type="text/css" href="css/home.css?v=2">
+	<link rel="stylesheet" type="text/css" href="css/home.css?v=5">
 </head>
 <body class="detail-page">
 	<div class="view-spot">
@@ -56,12 +56,15 @@
 		</div>
 	</div>
 	<div class="view-spot guide-detail">
-		<div class="guide-detail-info">
-			<ul class="guide-info-nav clearfix">
+		<div class="guide-info-nav">
+			<ul class="clearfix">
 				<li class="cur"><span class="guide-advantage">体验亮点</span></li>
 				<li class=""><span class="guide-plan">行程安排</span></li>
 				<li class=""><span class="guide-notice">预定须知</span></li>
 			</ul>
+		</div>
+		
+		<div class="guide-detail-info">
 			<div class="guide-advantage-content">
 				师从法国甜点大师Gaston Lenôtre，在26岁时就获得了面包烘焙工艺的法国最佳手工艺者Meilleur Ouvrier de France的荣誉称号，从而成为法国历史上最年轻的高级面包师。之后，他有幸为法国总理在其官邸烘培面包与甜点。1999年，他和一位同仁开设了面包店，并开始为巴黎的米其林星级餐厅供应面包与糕点，包括米其林三星主厨Yannick Alléno在内的共18颗米其林星的主厨餐厅。
 			</div>
@@ -192,15 +195,56 @@
 				$(".pic-carousel").hide();
 			});
 		
+			function changeNav(nav){
+				$(".guide-info-nav li").removeClass("cur");
+				nav.parent().addClass("cur");
+			}
 		
 			$('.summary-tip-close').bind('click', function(){
 				$('.summary-tip').hide();
 			});
+			var guideNoticeInfoTop = $(".guide-notice-info").offset().top-120,
+				guideAdvantageContentTop = $(".guide-advantage-content").offset().top-120,
+				guidePlanInfoTop = $(".guide-plan-info").offset().top-120;
+				
+			console.log(guideAdvantageContentTop);
+			console.log(guidePlanInfoTop);
+			console.log(guideNoticeInfoTop);
+			
+			$(".guide-advantage").click(function(event) {
+				$(window).scrollTop(guideAdvantageContentTop);
+				changeNav($(this));
+			});
 			$(".guide-plan").click(function(event) {
-				$(window).scrollTop($(".guide-plan-info").offset().top);
+				$(window).scrollTop(guidePlanInfoTop);
+				changeNav($(this));
 			});
 			$(".guide-notice").click(function(event) {
-				$(window).scrollTop($(".guide-notice-info").offset().top);
+				$(window).scrollTop(guideNoticeInfoTop);
+				changeNav($(this));
+			});
+			
+			var guideInfoNavStatus = 0, guideInfoNav = $(".guide-info-nav"), 
+				guideInfoNavTop = guideInfoNav.offset().top;
+			$(window).scroll(function(){
+				var scrollTop = $(window).scrollTop();
+				console.log("         "+scrollTop);
+				if(guideInfoNavStatus == 0 && scrollTop > guideInfoNavTop){
+					guideInfoNav.addClass("guide-info-nav-fixed");
+					guideInfoNavStatus = 1;
+				}else if(guideInfoNavStatus == 1 && scrollTop <= guideInfoNavTop){
+					guideInfoNav.removeClass("guide-info-nav-fixed");
+					guideInfoNavStatus = 0;
+				}
+				if(scrollTop > guideNoticeInfoTop){console.log("notice");
+					changeNav($(".guide-notice"));
+				}
+				if(scrollTop < guidePlanInfoTop){console.log("advantage");
+					changeNav($(".guide-advantage"));
+				}
+				if(guideNoticeInfoTop >scrollTop &&scrollTop > guidePlanInfoTop){console.log("plan");
+					changeNav($(".guide-plan"));
+				}
 			});
 		
 		})

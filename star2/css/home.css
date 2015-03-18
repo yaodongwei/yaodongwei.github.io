@@ -412,11 +412,33 @@ body{
 }
 
 .guide-detail {
+	position: relative;
 	margin-top: 20px;
 }
 
 .guide-detail .guide-detail-info, .guide-plan-info .guide-plan-content, .guide-notice-content{
 	padding: 40px;
+}
+
+.guide-detail-info{
+	position: relative;
+}
+
+.guide-info-nav{
+	position: absolute;
+	width: 100%;
+	top: 40px;
+	z-index: 10;
+	background-color: #fff;
+}
+
+.guide-info-nav-fixed{
+	position: fixed;
+	top:0;
+}
+
+.guide-info-nav ul{
+	margin-left: 40px;
 }
 
 .guide-info-nav li {
@@ -433,7 +455,7 @@ body{
 	text-align: center;
 	line-height: 30px;
 	font-size: 24px;
-	background: url(../img/icons.png);
+	background: url(../img/icons.png?v=1);
 	text-decoration: none;
 }
 
@@ -441,16 +463,16 @@ body{
 	border-bottom: 2px solid #ffb11b;
 }
 
-.guide-info-nav li.cur a {
+.guide-info-nav li.cur span {
 	color: #ffb11b;
 }
 
 .guide-info-nav .guide-advantage {
-	background-position: -60px -132px;
+	background-position: -60px -246px;
 }
 
 .guide-info-nav .cur .guide-advantage {
-	background-position: -60px -132px;
+	background-position: -60px -134px;
 }
 
 .guide-info-nav .cur .guide-plan {
@@ -474,6 +496,7 @@ body{
 	font-size: 24px;
 	padding-top: 26px;
 	line-height: 38px;
+	margin-top: 122px;
 	word-break : normal;
 	color: #565a5c;
 	background: url(../img/quotes.png) no-repeat -12px 22px;
@@ -797,36 +820,43 @@ body{
 
 /********************Booking***************************/
 
+.booking-page .view-spot{
+	width: 100%;
+}
+
 .booking-head{
 	position: relative;
-	height: 230px;
+	height: 115px;
 	background-color: #edefed;
 }
 
 .return-back {
 	position: absolute;
 	left: 20px;
-	top: 30px;
-	width: 82px;
-	height: 82px;
-	background: url(../img/tip.png) no-repeat -7px -328px;
+	top: 15px;
+	background-size: 200px 250px;
+	width: 41px;
+	height: 41px;
+	background-image: url(../img/tip.png);
+	background-repeat: no-repeat;
+	background-position: -4px -164px;
 }
 
 .booking-thanks{
 	text-transform: uppercase;
-	padding-top: 58px;
+	padding-top: 29px;
 	text-align: center;
 	color: #ffb11b;
-	font-size: 30px;
+	font-size: 15px;
 	font-family: "Times New Roman", Arial;
 }
 
 .booking-thanks-desc{
 	text-align: center;
 	color: #565a5c;
-	font-size: 24px;
-	line-height: 34px;
-	margin-top: 43px;
+	font-size: 12px;
+	line-height: 17px;
+	margin-top: 22px;
 }
 
 .booking-form-dis {
@@ -834,23 +864,23 @@ body{
 }
 
 .booking-form-wrap{
-	padding: 0 40px 30px;
+	padding: 0 20px 15px;
 }
 
 .booking-form-wrap label {
 	display: block;
-	margin-top: 40px;
-	line-height: 30px;
-	font-size: 24px;
+	margin-top: 20px;
+	line-height: 15px;
+	font-size: 12px;
 	color: #565a5c;
 }
 
 .booking-form-wrap input {
-	height: 50px;
-	margin-top: 12px;
+	height: 25px;
+	margin-top: 6px;
 	width: 100%;
-	line-height: 40px;
-	font-size: 24px;
+	line-height: 20px;
+	font-size: 12px;
 	border: none;
 	border-bottom: 1px solid #ffb11b;
 }
@@ -866,30 +896,31 @@ body{
 .booking-form-wrap .submit {
 	background-color: #ffb11b;
 	border: none;
+	height: 40px;
 	color: #fff;
-	border-radius: 10px;
-	margin-top: 50px;
+	border-radius: 5px;
+	margin-top: 25px;
 }
 
 .pnum-wrap .radio{
 	margin-top: 0px;
-	height: 30px;
-	margin-right: 10px;
+	height: 15px;
+	margin-right: 5px;
 	vertical-align: text-bottom;
-	width: 30px;
+	width: 15px;
 	display: inline-block;
 }
 #male{
-	margin-left: 20px;
+	margin-left: 10px;
 }
 #female{
-	margin-left: 90px;
+	margin-left: 45px;
 }
 
 .pnum-wrap .s-label{
 	margin-top: 0px;
 	color: #A9A9BB;
-	width: 30px;
+	width: 15px;
 	display: inline-block;
 }
 
