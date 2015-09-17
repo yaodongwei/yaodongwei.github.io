@@ -1,6 +1,12 @@
 *{
 	margin: 0;
 	padding: 0;
+	font-family: STHeiti,"Microsoft Yahei","Microsoft YaHei",Arial,sans-serif;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	transition: all 0.5s;
 }
 .clearfix{
 	zoom: 1;
@@ -14,12 +20,13 @@ html{
 	height: 100%;
 }
 body{
+	overflow: hidden;
 	height: 100%;
 	background: url(./img/back.png) repeat-x 0 0;
-	position: relative;
 }
 .top-content{
 	position: relative;
+	margin-top: 30px;
 	height: 215px;
 	background: url(./img/back1.png) no-repeat center;
 	background-size: 320px 213px;
@@ -52,9 +59,9 @@ body{
 	display: none;
 }
 .middle-content, .done-middle-content{
-	margin-top: 10px;
-	font-size: 14px;
-	line-height: 20px;
+	margin-top: 30px;
+	font-size: 16px;
+	line-height: 1.4;
 	padding: 0 20px;
 	text-align: center;
 	color: #8b8b8b;
@@ -73,10 +80,11 @@ body{
 .phone-num-input{
 	width: 254px;
 	height: 33px;
-	font-size: 10px;
+	font-size: 14px;
 	display: block;
 	margin: 65px auto 0;
 	padding: 0 10px;
+	border: 1px solid #e1e1e8;
 }
 .submit-wallet-get, .invite-friend{
 	margin: 15px auto 0;
@@ -132,12 +140,12 @@ body{
 	height: 45px;
 	line-height: 45px;
 	border-bottom: 1px solid #FFF;
-	font-size: 15px;
+	font-size: 16px;
 	text-align: center;
 }
 .tip-body{
 	height: 82px;
-	font-size: 11px;
+	font-size: 14px;
 	padding: 15px 15px 15px 35px;
 	line-height: 20px;
 }
@@ -164,10 +172,4 @@ body{
 .done .invite-friend, .done .done-middle-content, .done .done-wallet-title{
 	display: block;
 }
-*{
-	-webkit-transition: all 0.5s;
-	-moz-transition: all 0.5s;
-	-ms-transition: all 0.5s;
-	-o-transition: all 0.5s;
-	transition: all 0.5s;
-}
+
