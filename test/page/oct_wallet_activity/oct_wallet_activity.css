@@ -127,11 +127,6 @@ body{
 	width: 100%;
 	overflow: hidden;
 	background-color: #3a444f;
-	-webkit-transition: all 0.5s;
-	-moz-transition: all 0.5s;
-	-ms-transition: all 0.5s;
-	-o-transition: all 0.5s;
-	transition: all 0.5s;
 }
 .tip-head{
 	height: 45px;
@@ -168,4 +163,11 @@ body{
 }
 .done .invite-friend, .done .done-middle-content, .done .done-wallet-title{
 	display: block;
+}
+*{
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	transition: all 0.5s;
 }
