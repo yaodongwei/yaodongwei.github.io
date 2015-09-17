@@ -10,7 +10,11 @@
 	height: 1px;
 	clear: both;
 }
+html{
+	height: 100%;
+}
 body{
+	height: 100%;
 	background: url(./img/back.png) repeat-x 0 0;
 	position: relative;
 }
@@ -56,6 +60,10 @@ body{
 	color: #8b8b8b;
 }
 .foot-content{
+	position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0px;
 	margin-top: 15px;
 	padding-top: 15px;
 	overflow: hidden;
@@ -116,6 +124,7 @@ body{
 	position: absolute;
 	left: 0;
 	bottom: 0;
+	width: 100%;
 	overflow: hidden;
 	background-color: #3a444f;
 	-webkit-transition: all 0.5s;
