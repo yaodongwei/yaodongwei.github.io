@@ -12,78 +12,80 @@
 }
 body{
 	background: url(./img/back.png) repeat-x 0 0;
-	width: 640px;
 	position: relative;
 }
 .top-content{
 	position: relative;
-	height: 430px;
+	height: 215px;
 	background: url(./img/back1.png) no-repeat center;
+	background-size: 320px 213px;
 }
 
 .top-content-suceess{
-	height: 478px;
+	height: 239px;
 	background: url(./img/back2.png) no-repeat center;
+	background-size: 320px 238px;
 }
 .wallet-title, .done-wallet-title{
-	width: 300px;
+	width: 150px;
 	position: absolute;
 	text-align: center;
 	left: 50%;
-	margin-left: -150px;
-	bottom: 5px;
-	font-size: 30px;
+	margin-left: -75px;
+	bottom: 3px;
+	font-size: 15px;
 	color: #FFFFFF;
 }
 .done-wallet-title{
 	display: none;
-	font-size: 24px;
-	bottom: 15px;
+	font-size: 12px;
+	bottom: 8px;
 }
 .wallet-title span{
-	font-size: 50px;
+	font-size: 25px;
 }
 .done-middle-content{
 	display: none;
 }
 .middle-content, .done-middle-content{
-	margin-top: 20px;
-	font-size: 26px;
-	line-height: 40px;
-	padding: 0 40px;
+	margin-top: 10px;
+	font-size: 14px;
+	line-height: 20px;
+	padding: 0 20px;
 	text-align: center;
 	color: #8b8b8b;
 }
 .foot-content{
-	margin-top: 30px;
-	padding-top: 30px;
+	margin-top: 15px;
+	padding-top: 15px;
 	overflow: hidden;
 	background: url(./img/back-footer.png) no-repeat center 10px;
+	background-size: 477px 270px;
 }
 .phone-num-input{
-	width: 510px;
-	height: 66px;
-	font-size: 20px;
+	width: 254px;
+	height: 33px;
+	font-size: 10px;
 	display: block;
-	margin: 130px auto 0;
-	padding: 0 20px;
+	margin: 65px auto 0;
+	padding: 0 10px;
 }
 .submit-wallet-get, .invite-friend{
-	margin: 30px auto 0;
-	font-size: 26px;
+	margin: 15px auto 0;
+	font-size: 13px;
 	color: #FFF;
-	width: 550px;
+	width: 275px;
 	display: block;
-	line-height: 66px;
+	line-height: 33px;
 	text-align: center;
 	text-decoration: none;
-	height: 66px;
+	height: 33px;
 	background-color: #ffb11b;
-	border-radius: 30px;
+	border-radius: 15px;
 }
 .invite-friend{
 	display: none;
-	margin-top: 130px;
+	margin-top: 65px;
 }
 .submit-wallet-get:hover, .invite-friend:hover{
 	background-color: #f76224;
@@ -92,16 +94,16 @@ body{
 	display: none;
 }
 .activity-tip{
-	margin-top: 50px;
-	margin-bottom: 50px;
+	margin-top: 25px;
+	margin-bottom: 25px;
 	background: #FFF;
 	text-align: center;
 }
 .activity-tip a{
 	color: #ffb11b;
-	font-size: 22px;
+	font-size: 11px;
 	text-decoration: none;
-	padding-bottom: 10px;
+	padding-bottom: 5px;
 	border-bottom: 1px solid #ffb11b;
 }
 .activity-tip a:hover{
@@ -123,32 +125,34 @@ body{
 	transition: all 0.5s;
 }
 .tip-head{
-	height: 90px;
-	line-height: 90px;
+	height: 45px;
+	line-height: 45px;
 	border-bottom: 1px solid #FFF;
-	font-size: 30px;
+	font-size: 15px;
 	text-align: center;
 }
 .tip-body{
-	height: 165px;
-	font-size: 22px;
-	padding: 30px 30px 30px 70px;
-	line-height: 40px;
+	height: 82px;
+	font-size: 11px;
+	padding: 15px 15px 15px 35px;
+	line-height: 20px;
 }
 .tip-footer{
-	height: 90px;
+	height: 45px;
 	border-top: 1px solid #fff;
 }
 .tip-footer a{
 	display: block;
-	width: 40px;
-	height: 40px;
-	margin: 40px auto;
+	width: 20px;
+	height: 20px;
+	margin: 20px auto;
 	background: url(./img/close.png) no-repeat 0 0;
+	background-size: 20px 20px;
 }
 .done .top-content{
-	background: url(./img/back2.png) no-repeat 0 0;	
-	height: 480px;
+	background: url(./img/back2.png) no-repeat center;	
+	background-size: 320px 238px;
+	height: 240px;
 }
 .done .submit-wallet-get, .done .phone-num-input, .done .middle-content, .done .wallet-title{
 	display: none;
