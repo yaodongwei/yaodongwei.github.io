@@ -1,0 +1,158 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.clearfix{
+	zoom: 1;
+}
+.clearfix:after{
+	content: " ";
+	height: 1px;
+	clear: both;
+}
+body{
+	background: url(./img/back.png) repeat-x 0 0;
+	width: 640px;
+	position: relative;
+}
+.top-content{
+	position: relative;
+	height: 430px;
+	background: url(./img/back1.png) no-repeat center;
+}
+
+.top-content-suceess{
+	height: 478px;
+	background: url(./img/back2.png) no-repeat center;
+}
+.wallet-title, .done-wallet-title{
+	width: 300px;
+	position: absolute;
+	text-align: center;
+	left: 50%;
+	margin-left: -150px;
+	bottom: 5px;
+	font-size: 30px;
+	color: #FFFFFF;
+}
+.done-wallet-title{
+	display: none;
+	font-size: 24px;
+	bottom: 15px;
+}
+.wallet-title span{
+	font-size: 50px;
+}
+.done-middle-content{
+	display: none;
+}
+.middle-content, .done-middle-content{
+	margin-top: 20px;
+	font-size: 26px;
+	line-height: 40px;
+	padding: 0 40px;
+	text-align: center;
+	color: #8b8b8b;
+}
+.foot-content{
+	margin-top: 30px;
+	padding-top: 30px;
+	overflow: hidden;
+	background: url(./img/back-footer.png) no-repeat center 10px;
+}
+.phone-num-input{
+	width: 510px;
+	height: 66px;
+	font-size: 20px;
+	display: block;
+	margin: 130px auto 0;
+	padding: 0 20px;
+}
+.submit-wallet-get, .invite-friend{
+	margin: 30px auto 0;
+	font-size: 26px;
+	color: #FFF;
+	width: 550px;
+	display: block;
+	line-height: 66px;
+	text-align: center;
+	text-decoration: none;
+	height: 66px;
+	background-color: #ffb11b;
+	border-radius: 30px;
+}
+.invite-friend{
+	display: none;
+	margin-top: 130px;
+}
+.submit-wallet-get:hover, .invite-friend:hover{
+	background-color: #f76224;
+}
+.done-middle-content{
+	display: none;
+}
+.activity-tip{
+	margin-top: 50px;
+	margin-bottom: 50px;
+	background: #FFF;
+	text-align: center;
+}
+.activity-tip a{
+	color: #ffb11b;
+	font-size: 22px;
+	text-decoration: none;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #ffb11b;
+}
+.activity-tip a:hover{
+	color: #f76224;
+	border-bottom-color: #f76224;
+}
+.activity-bottom-tip{
+	height: 0;
+	color: #fff;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	overflow: hidden;
+	background-color: #3a444f;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	transition: all 0.5s;
+}
+.tip-head{
+	height: 90px;
+	line-height: 90px;
+	border-bottom: 1px solid #FFF;
+	font-size: 30px;
+	text-align: center;
+}
+.tip-body{
+	height: 165px;
+	font-size: 22px;
+	padding: 30px 30px 30px 70px;
+	line-height: 40px;
+}
+.tip-footer{
+	height: 90px;
+	border-top: 1px solid #fff;
+}
+.tip-footer a{
+	display: block;
+	width: 40px;
+	height: 40px;
+	margin: 40px auto;
+	background: url(./img/close.png) no-repeat 0 0;
+}
+.done .top-content{
+	background: url(./img/back2.png) no-repeat 0 0;	
+	height: 480px;
+}
+.done .submit-wallet-get, .done .phone-num-input, .done .middle-content, .done .wallet-title{
+	display: none;
+}
+.done .invite-friend, .done .done-middle-content, .done .done-wallet-title{
+	display: block;
+}

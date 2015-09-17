@@ -1,0 +1,21 @@
+{
+	"tour_list": [{
+		"price": 40, //全部是按人计算
+		"tour_id": 121212, //提交的时候使用
+		"title": "Excepteur sint occaecat cupidatat non proident sunt in culpa", //tour的标题
+		"product_list": [{ //tour列表数据
+			"account": {
+				"avatar": "fdadasffefsfdefsfdsf", //产品用户头像
+				"name": "fsd" //产品用户名
+			},
+			"video_id": "fdsfadfsd", //配置的视频名称
+			"duraction": 3, //产品时长
+			"title": "Lorem ipsum dolor sit amet elit consectetur adipisicing", //产品title
+			"picture": "fdsaff-sdafasfefaef", //产品图片ID
+			"address": {
+				"country": "Amarica",
+				"city": "Houston"
+			}
+		}]
+	}]
+}

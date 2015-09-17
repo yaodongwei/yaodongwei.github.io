@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="./oct_wallet_activity.css">
+	<title>白日梦 贴心旅行礼包</title>
+</head>
+<body>
+	<div class="top-content">
+		<div class="wallet-title">
+			白送 <span class="wallet-value">20</span>$ 美金
+		</div>
+		<div class="done-wallet-title">
+			你的小金库已进账20美金！
+		</div>
+	</div>
+	<div class="middle-content">
+		出去玩怎么能没钱呢，给你，拿去随便花<br/>白日梦 环球即时当地体验平台
+	</div>
+	<div class="done-middle-content">
+		不过出去玩怎么能只准备钱呢，我们连行程都帮你规划好啦<br/>礼包收下了，行走天下用得到<br/>巨款啊，先存存好
+	</div>
+	<div class="foot-content">
+		<input type="num" name="phone_number" placeholder="请输入手机号码" class="phone-num-input">
+		<a href="#" class="submit-wallet-get">领取白日梦美金红包</a>
+		<a href="#" class="invite-friend">我也要邀请朋友</a>
+		<div class="activity-tip">
+			<a href="#">活动说明</a>
+		</div>
+	</div>
+	<div class="activity-bottom-tip">
+		<div class="tip-head">活动说明</div>
+		<div class="tip-body">
+			<ol class="tip-list">
+				<li>本此红包为白日梦网站新注册用户专享，有效截止日期至2016年2月29日</li>
+				<li>红包数量有限，下手要快！</li>
+				<li>白日梦对该活动保持最终解释权</li>
+			</ol>
+		</div>
+		<div class="tip-footer">
+			<a href="#" class="close-tip"></a>
+		</div>
+	</div>
+</body>
+<script src="../../static/js/jquery.js"></script>
+<script>
+$(function(){
+	$(".activity-tip a").click(function(event) {
+		event.preventDefault();
+		$(".activity-bottom-tip").height(450);
+	});
+	$(".close-tip").click(function(event) {
+		event.preventDefault();
+		$(".activity-bottom-tip").height(0);
+	});
+	$(".submit-wallet-get").click(function(event) {
+		event.preventDefault();
+		$("body").addClass('done');
+	});
+	$(".invite-friend").click(function(event) {
+		event.preventDefault();
+		$("body").removeClass('done');
+	});
+});
+</script>
+</html>
