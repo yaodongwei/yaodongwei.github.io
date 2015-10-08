@@ -5,4 +5,7 @@ tags: text hexo
 
 #测试Hexo
 
-	- 随便写点东西吧
+	
+ 1. 随便写点东西吧
+ 2. hahahah
+ 3. 嘻嘻哈哈哈
