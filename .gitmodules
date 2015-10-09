@@ -1,0 +1,4 @@
+[submodule "myhueman"]
+	path = themes/myhueman
+	url = https://github.com/yaodongwei/myhueman.git
+	branch = master
