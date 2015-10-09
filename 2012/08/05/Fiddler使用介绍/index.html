@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Fiddler使用介绍 | Cajón_YDW的随笔</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一、Fiddler工作原理
+Fiddler以代理Web服务器形式工作，可以拦截所有的Request和Response。使用代理地址：127.0.0.1，端口：8888。当Fiddler退出时会自动注销代理，以免影响其他程序。如果非正常退出，则需要重启Fiddler解决。
+二、Fiddler如何捕获Firefox的会话
+能支持HTTP代理的任意程序的数据包都能被Fiddler嗅探到，其运行本质是监听">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Fiddler使用介绍">
+<meta property="og:url" content="http://yaodongwei.cn/2012/08/05/Fiddler使用介绍/index.html">
+<meta property="og:site_name" content="Cajón_YDW的随笔">
+<meta property="og:description" content="一、Fiddler工作原理
+Fiddler以代理Web服务器形式工作，可以拦截所有的Request和Response。使用代理地址：127.0.0.1，端口：8888。当Fiddler退出时会自动注销代理，以免影响其他程序。如果非正常退出，则需要重启Fiddler解决。
+二、Fiddler如何捕获Firefox的会话
+能支持HTTP代理的任意程序的数据包都能被Fiddler嗅探到，其运行本质是监听">
+<meta property="og:image" content="http://h.hiphotos.baidu.com/space/pic/item/dcc451da81cb39dbb9a099c0d0160924aa1830c7.jpg">
+<meta property="og:image" content="http://a.hiphotos.baidu.com/space/pic/item/060828381f30e924e8b762a74c086e061d95f711.jpg">
+<meta property="og:image" content="http://c.hiphotos.baidu.com/space/pic/item/6c224f4a20a446235b9b79f49822720e0df3d7d7.jpg">
+<meta property="og:image" content="http://g.hiphotos.baidu.com/space/pic/item/ac4bd11373f082025c414da94bfbfbedaa641b50.jpg">
+<meta property="og:image" content="http://h.hiphotos.baidu.com/space/pic/item/eac4b74543a98226e071ceb18a82b9014b90ebf0.jpg">
+<meta property="og:image" content="http://c.hiphotos.baidu.com/space/pic/item/4610b912c8fcc3ce39602ca59245d688d53f2080.jpg">
+<meta property="og:image" content="http://e.hiphotos.baidu.com/space/pic/item/4e4a20a4462309f7fcdf4884720e0cf3d6cad6f0.jpg">
+<meta property="og:image" content="http://h.hiphotos.baidu.com/space/pic/item/4b90f603738da9770e8c63bdb051f8198718e381.jpg">
+<meta property="og:updated_time" content="2015-10-09T03:04:21.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Fiddler使用介绍">
+<meta name="twitter:description" content="一、Fiddler工作原理
+Fiddler以代理Web服务器形式工作，可以拦截所有的Request和Response。使用代理地址：127.0.0.1，端口：8888。当Fiddler退出时会自动注销代理，以免影响其他程序。如果非正常退出，则需要重启Fiddler解决。
+二、Fiddler如何捕获Firefox的会话
+能支持HTTP代理的任意程序的数据包都能被Fiddler嗅探到，其运行本质是监听">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+    <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  
+  
+    <link rel="stylesheet" href="/scrollLoading/style.css" type="text/css">
+  
+  
+
+
+  
+
+  
+    <link href='//fonts.useso.com/css?family=Titillium+Web:300,400,600' rel='stylesheet' type='text/css'>
+    <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css" type="text/css">
+</head>
+
+<body>
+  <div id="wrap">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div class="container">
+      <div class="container-inner">
+        <div id="header-title">
+          <h1 class="logo-wrap">
+            <a href="/" class="logo"></a>
+          </h1>
+          
+            <h2 class="subtitle-wrap">
+              <p class="subtitle">工作、生活中的点点滴滴</p>
+            </h2>
+          
+        </div>
+        <div id="header-inner" class="nav-container">
+          <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+          <div class="nav-container-inner">
+            <ul id="main-nav">
+              
+                <li class="main-nav-list-item" ><a class="main-nav-list-link" href="/">主页</a></li>
+              
+                    
+                  
+                <li class="main-nav-list-item" ><a class="main-nav-list-link" href="/about/index.html">关于</a></li>
+              
+            </ul>
+            <nav id="sub-nav">
+              <div id="search-form-wrap">
+                <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="搜索"><input type="hidden" name="sitesearch" value="http://yaodongwei.cn"></form>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+    <div class="container">
+      <div class="main-body container-inner">
+        <div class="main-body-inner">
+          <section id="main">
+            <div class="main-body-header">
+
+              <h1 class="header">未分类</h1>
+            </div>
+            <div class="main-body-content">
+              
+  <article id="post-Fiddler使用介绍" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+      <!--  -->
+      
+        <header class="article-header">
+          
+  
+    <h1 class="article-title" itemprop="name">
+      Fiddler使用介绍
+    </h1>
+  
+
+        </header>
+      
+      <p class="article-byline">
+        <a href="/2012/08/05/Fiddler使用介绍/" class="article-date">
+  <time datetime="2012-08-05T09:36:20.000Z" itemprop="datePublished">2012-08-05</time>
+</a>
+      </p>
+      <div class="article-entry" itemprop="articleBody">
+        <p>一、Fiddler工作原理</p>
+<p>Fiddler以代理Web服务器形式工作，可以拦截所有的Request和Response。使用代理地址：127.0.0.1，端口：8888。当Fiddler退出时会自动注销代理，以免影响其他程序。如果非正常退出，则需要重启Fiddler解决。</p>
+<p>二、Fiddler如何捕获Firefox的会话</p>
+<p>能支持HTTP代理的任意程序的数据包都能被Fiddler嗅探到，其运行本质是监听8888端口的http代理。Fiddler启动时默认将IE的代理设置为127.0.0.1:8888，而其他浏览器需要手工设置。所以在Firefox浏览器中手动将浏览器的代理设置成127.0.0.1：8888便可监听数据。代理如何设置，这里不再介绍。</p>
+<p>三、捕获HTTPS会话</p>
+<p>Fiddler默认不会捕获HTTPS会话，需要手动设置，打开Fiddler Tool→Fiddler Options→HTTPS TAB，勾选上对应的选项即可，如图：</p>
+<p><img src="http://h.hiphotos.baidu.com/space/pic/item/dcc451da81cb39dbb9a099c0d0160924aa1830c7.jpg" alt="此处输入图片的描述"></p>
+<p>四、Fiddler使用界面</p>
+<p>Fiddler界面包括菜单栏、工具栏、会话列表、命令行工具、以及详细信息。其中详细信息包含统计Statistics、Inspectors、AutoResponder、Filters、Log、Timeline等。</p>
+<ol>
+<li>统计视图Statistic陈列出所有HTTP通信，可以通过选择多个会话得出这些会话的总的统计信息，比如多个请求和传输的数据大小、时间等各种信息，可以很方便得出哪些请求比较耗时，从而对页面进行访问速度优化，如下图：<br><img src="http://a.hiphotos.baidu.com/space/pic/item/060828381f30e924e8b762a74c086e061d95f711.jpg" alt="此处输入图片的描述"></li>
+</ol>
+<p>五、Fiddler中设置断点</p>
+<p>Fiddler最强大的功能莫过于修改断点，设置好断点后可以修改HttpRequest的任何信息，包括Host、Cookie或者表单中的数据。设置断点的方法有两种：</p>
+<ol>
+<li><p>菜单中点击Rules→Automatic Breakpoint→Before Requests(这种方法会终止所有会话)，清除的方法是Rules→Automatic Breakpoint→Disabled；</p>
+</li>
+<li><p>在命令行输入：bpu（设置response断点使用bpuafter） www.baidu.com（只会中断www.baidu.com），消除命令的方法是命令行输入bpu。</p>
+</li>
+</ol>
+<p>实例：</p>
+<ol>
+<li>用IE 打开百度的登录框  <a href="http://www.baidu.com；" target="_blank" rel="external">http://www.baidu.com；</a></li>
+<li>打开Fiddler,  在命令行中输入bpu <a href="https://passport.baidu.com/v2/api/?login；" target="_blank" rel="external">https://passport.baidu.com/v2/api/?login；</a></li>
+<li>输入错误的用户名和密码，点击登录；</li>
+<li>Fiddler 能中断这次会话，选择被中断的会话，点击Inspectors tab下的WebForms tab 修改用户名密码，然后点击Run to Completion，会发现页面登陆成功。<br><img src="http://c.hiphotos.baidu.com/space/pic/item/6c224f4a20a446235b9b79f49822720e0df3d7d7.jpg" alt="此处输入图片的描述"></li>
+</ol>
+<p>六、创建AutoResponder</p>
+<p>创建Fiddler的AutoResponder是最常用的功能，它允许从本地返回文件，而不用将请求发送到服务器上。看个例子：</p>
+<ol>
+<li>打开百度首页，把百度的logo图片保存到本地，并且对图片做些修改；</li>
+<li>打开Fiddler找到logo图片的会话：<a href="http://www.baidu.com/img/baidu_sylogo1.gif，并将此回话拖动到AutoResponder" target="_blank" rel="external">http://www.baidu.com/img/baidu_sylogo1.gif，并将此回话拖动到AutoResponder</a> Tab下；</li>
+<li>选择Enable automatic reaponses 和Unmatched requests passthrough；</li>
+<li>在下面的Rule Editor 下面选择 Find a file… 选择本地保存的图片.  最后点击Save 保存下。</li>
+<li>再用IE打开百度首页， 你会看到首页的logo用的是本地的。<br> <img src="http://g.hiphotos.baidu.com/space/pic/item/ac4bd11373f082025c414da94bfbfbedaa641b50.jpg" alt="此处输入图片的描述"></li>
+</ol>
+<p>七、Fiddler会话过滤</p>
+<p>每次使用Fiddler, 打开一个网站，都能在Fiddler中看到几十个会话，看得眼花缭乱。最好的办法是过滤掉一些会话，比如过滤掉图片的会话。Fiddler中有过滤的功能， 在右边的Filters tab中，里面有很多选项， 稍微研究下，就知道怎么用。</p>
+<p>八、会话比较功能</p>
+<p>选中2个会话，右键然后点击Compare，就可以用WinDiff来比较两个会话的不同了（需要安装WinDiff）</p>
+<p>九、QuickExec命令行的使用技巧</p>
+<p>Fiddler界面左下角提供命令行工具，允许直接输入命令。</p>
+<ol>
+<li><p>可用于命令行的快捷方式有：</p>
+<p> ALT+Q：快速将光标移动到命令行中；<br> CTRL+ALT+F：将Fiddler窗口快速置顶；<br> CTRL+I：快速将最后选择的会话URL插入到命令行中；</p>
+</li>
+<li>命令有以下这些（由Fiddler官网翻译而来）：<br> <img src="http://h.hiphotos.baidu.com/space/pic/item/eac4b74543a98226e071ceb18a82b9014b90ebf0.jpg" alt="此处输入图片的描述"><br> <img src="http://c.hiphotos.baidu.com/space/pic/item/4610b912c8fcc3ce39602ca59245d688d53f2080.jpg" alt="此处输入图片的描述"><br> <img src="http://e.hiphotos.baidu.com/space/pic/item/4e4a20a4462309f7fcdf4884720e0cf3d6cad6f0.jpg" alt="此处输入图片的描述"><br> <img src="http://h.hiphotos.baidu.com/space/pic/item/4b90f603738da9770e8c63bdb051f8198718e381.jpg" alt="此处输入图片的描述"></li>
+</ol>
+<p>参考文档：<a href="http://kb.cnblogs.com/page/130367/#introduce" target="_blank" rel="external">http://kb.cnblogs.com/page/130367/#introduce</a> </p>
+<p>Fiddler官方帮助文档：<a href="http://www.fiddler2.com/fiddler/help" target="_blank" rel="external">http://www.fiddler2.com/fiddler/help</a> </p>
+<p>Word版下载：<a href="http://wenku.baidu.com/link?url=C1vvl3spLgk_rwajEsW5Ab4-q1UXOfdxWoqlZwHhDPr9Fijf8lOFYcTqJlFvsoSb2Q3jAIaPl9qRpBZ4_Phpbk-Scdw1493jbsAEQpcUC6m" target="_blank" rel="external">Fiddler使用介绍.doc</a></p>
+
+      </div>
+      <footer class="article-footer">
+        <a data-url="http://yaodongwei.cn/2012/08/05/Fiddler使用介绍/" data-id="cifj1zvlm000s04zm1a3l4o9j" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+        
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工具/">工具</a></li></ul>
+
+      </footer>
+    </div>
+  </article>
+  
+  
+
+            </div>
+          </section>
+          <aside id="sidebar">
+  <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+  <div class="sidebar-top">
+    <p>关注我 :</p>
+    <ul class="social-links">
+      
+        <li><a class="social-tooltip" title="github" href="https://github.com/yaodongwei" target="_blank"><i class="icon fa fa-github"></i></a></li>
+      
+        <li><a class="social-tooltip" title="weibo" href="http://weibo.com/ydw0901" target="_blank"><i class="icon fa fa-weibo"></i></a></li>
+      
+        <li><a class="social-tooltip" title="twitter" href="https://twitter.com/ydw0901" target="_blank"><i class="icon fa fa-twitter"></i></a></li>
+      
+        <li><a class="social-tooltip" title="facebook" href="https://www.facebook.com/donw.yao" target="_blank"><i class="icon fa fa-facebook"></i></a></li>
+      
+    </ul>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2013/12/30/无限下拉瀑布流性能解决方案/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <p class="article-nav-title">
+        
+          无限下拉瀑布流性能解决方案
+        
+      </p>
+      <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+  
+  
+</nav>
+
+  
+  <div class="widgets-container">
+    
+      
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul id="recent-post" class="">
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              
+<a href="/2015/10/08/textHexo/" class="thumbnail">
+  
+    <span style="background-image:url(http://bos.nj.bpc.baidu.com/v1/agroup/34261b9c8c89c48941ff03c414d6b91807b74481
+)" alt="贴吧Bigpipe架构" class="thumbnail-image"></span>
+  
+</a>
+
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"></p>
+              <p class="item-title"><a href="/2015/10/08/textHexo/" class="title">贴吧Bigpipe架构</a></p>
+              <p class="item-date"><time datetime="2015-10-08T09:36:20.000Z" itemprop="datePublished">2015-10-08</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              
+<a href="/2015/10/08/hello-world/" class="thumbnail">
+  
+    <span class="thumbnail-image thumbnail-none"></span>
+  
+</a>
+
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"></p>
+              <p class="item-title"><a href="/2015/10/08/hello-world/" class="title">Hello World</a></p>
+              <p class="item-date"><time datetime="2015-10-08T09:06:31.000Z" itemprop="datePublished">2015-10-08</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              
+<a href="/2015/03/02/Bigpipe使用文档/" class="thumbnail">
+  
+    <span style="background-image:url(http://bos.nj.bpc.baidu.com/v1/agroup/5c33fe26479f8751b051e4f447f2872c5489c375
+)" alt="贴吧Bigpipe使用文档" class="thumbnail-image"></span>
+  
+</a>
+
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"></p>
+              <p class="item-title"><a href="/2015/03/02/Bigpipe使用文档/" class="title">贴吧Bigpipe使用文档</a></p>
+              <p class="item-date"><time datetime="2015-03-02T04:15:10.000Z" itemprop="datePublished">2015-03-02</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              
+<a href="/2015/03/02/2014总结和2015计划/" class="thumbnail">
+  
+    <span class="thumbnail-image thumbnail-none"></span>
+  
+</a>
+
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"></p>
+              <p class="item-title"><a href="/2015/03/02/2014总结和2015计划/" class="title">2014总结和2015计划</a></p>
+              <p class="item-date"><time datetime="2015-03-02T04:15:10.000Z" itemprop="datePublished">2015-03-02</time></p>
+            </div>
+          </li>
+        
+          <li>
+            
+            <div class="item-thumbnail">
+              
+<a href="/2015/01/30/Bigpipe类图和接口设计/" class="thumbnail">
+  
+    <span style="background-image:url(http://bos.nj.bpc.baidu.com/v1/agroup/34261b9c8c89c48941ff03c414d6b91807b74481
+)" alt="Bigpipe类图和接口设计" class="thumbnail-image"></span>
+  
+</a>
+
+            </div>
+            
+            <div class="item-inner">
+              <p class="item-category"></p>
+              <p class="item-title"><a href="/2015/01/30/Bigpipe类图和接口设计/" class="title">Bigpipe类图和接口设计</a></p>
+              <p class="item-date"><time datetime="2015-01-30T09:36:20.000Z" itemprop="datePublished">2015-01-30</time></p>
+            </div>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+      
+
+    
+      
+  <div class="widget-wrap widget-list">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">三月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">一月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">十二月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">十二月 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/08/">八月 2012</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap widget-float">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Bigpipe/" style="font-size: 20px;">Bigpipe</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/PHP/" style="font-size: 20px;">PHP</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/性能优化/" style="font-size: 10px;">性能优化</a> <a href="/tags/总结/" style="font-size: 10px;">总结</a>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap widget-list">
+    <h3 class="widget-title">链接</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://hexo.io">Hexo</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+    
+  </div>
+</aside>
+        </div>
+      </div>
+    </div>
+    <footer id="footer">
+  
+  <div class="container">
+    <div class="container-inner">
+      <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+      <div class="credit">
+        <h1 class="logo-wrap">
+          <a href="/" class="logo"></a>
+        </h1>
+        <p>&copy; 2015 Yao Dongwei</p>
+        <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+    
+
+
+  <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+
+
+
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+
+  <script src="/scrollLoading/jquery.scrollLoading.js" type="text/javascript"></script>
+  <script src="/scrollLoading/main.js" type="text/javascript"></script>
+
+
+<script src="/js/html-patch.js" type="text/javascript"></script>
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>
