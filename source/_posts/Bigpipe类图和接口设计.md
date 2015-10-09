@@ -1,9 +1,13 @@
-title: 贴吧Bigpipe架构
-date: 2015-10-08 17:36:20
+title: Bigpipe类图和接口设计
+date: 2015-01-30 17:36:20
 tags: [Bigpipe, PHP]
 ---
 
+# Bigpipe类图和接口设计
 
+标签（空格分隔）： Bigpipe
+
+---
 
 ###PHP类图
 ![新窗口查看](http://bos.nj.bpc.baidu.com/v1/agroup/34261b9c8c89c48941ff03c414d6b91807b74481)

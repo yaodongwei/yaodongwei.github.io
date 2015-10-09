@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 姚东伟的随笔
+title: Cajón_YDW的随笔
 subtitle: 工作、生活中的点点滴滴
 description: 学习、生活中的感悟，要及时记录，养成习惯，让自己更快的成长
 author: Yao Dongwei
@@ -14,7 +14,7 @@ timezone: Asia/Shanghai
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://yaodongwei.cn
 root: /
-permalink: :year/:month/:day/:id/
+permalink: :year/:month/:day/:title/
 permalink_defaults:
 
 # Directory
@@ -64,7 +64,7 @@ pagination_dir: page
 ## Plugins: http://hexo.io/plugins/
 ## Themes: http://hexo.io/themes/
 ## theme: landscape
-theme: hueman
+theme: myhueman
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
