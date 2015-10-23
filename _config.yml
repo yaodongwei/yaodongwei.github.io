@@ -3,16 +3,16 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Cajón_YDW的随笔
-subtitle: 工作、生活中的点点滴滴
-description: 学习、生活中的感悟，要及时记录，养成习惯，让自己更快的成长
-author: Yao Dongwei
-language: zh-CN
-timezone: Asia/Shanghai
+title: Cajón的博客
+subtitle: 记录工作、生活中领悟的点点滴滴
+description: 生活、工作、学习
+author: yaodongwei
+language: zh-cn
+timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yaodongwei.cn
+url: http://www.yaodongwei.cn
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -28,7 +28,7 @@ i18n_dir: :lang
 skip_render:
 
 # Writing
-new_post_name: :title.md # File name of new posts
+new_post_name: :title/index.md # File name of new posts
 default_layout: post
 titlecase: false # Transform title into titlecase
 external_link: true # Open external links in new tab
@@ -63,13 +63,12 @@ pagination_dir: page
 # Extensions
 ## Plugins: http://hexo.io/plugins/
 ## Themes: http://hexo.io/themes/
-## theme: landscape
 theme: myhueman
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
-  type: git
-  repo: https://github.com/yaodongwei/yaodongwei.github.io.git
-  branch: master
-  message: :m
+	type: git
+	repo: https://github.com/yaodongwei/yaodongwei.github.io.git
+	branch: master
+	message: :commit
