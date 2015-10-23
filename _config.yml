@@ -68,7 +68,7 @@ theme: myhueman
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
-	type: git
-	repo: https://github.com/yaodongwei/yaodongwei.github.io.git
-	branch: master
-	message: :commit
+  type: git
+  repo: https://github.com/yaodongwei/yaodongwei.github.io.git
+  branch: master
+  message: :commit
