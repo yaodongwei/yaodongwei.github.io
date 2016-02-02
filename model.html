@@ -1,0 +1,437 @@
+<html>
+<head>
+	<title>模型</title>
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+	<style>
+		form div{
+			width: 230px; 
+			float: left;
+			margin: 10px 20px;
+			height: 50px;
+		}
+		form input{
+			width: 200px;
+		}
+		#result span{
+			display: inline-block;
+			width: 100px;
+			height: 30px;
+			margin: 10px 20px;
+		}
+	</style>
+	<script src="./js/jquery.js"></script>
+	<script src="./js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<div style="text-align: center;margin-top: 30px;"><h3>蒙特卡罗</h3></div>
+			<form action="/" id="monteForm" style="margin-top: 20px;">
+				<div class="form-group"><label for="">期初收入</label><input class="form-control" type="text" placeholder="期初收入" name="rvalraw" value="1940952"></div>
+				<div class="form-group"><label for="">可动用现金</label><input class="form-control" type="text" placeholder="可动用现金" name="xvalraw" value="169812"></div>
+				<div class="form-group"><label for="">固定资产</label><input class="form-control" type="text" placeholder="固定资产" name="pvalraw" value="80653"></div>
+				<div class="form-group"><label for="">收入增长率</label><input class="form-control" type="text" placeholder="收入增长率" name="mural" value="0.3088"></div>
+				<div class="form-group"><label for="">收入标准差</label><input class="form-control" type="text" placeholder="收入标准差" name="etaraw" value="0.6267"></div>
+				<div class="form-group"><label for="">预期收入增长率标准差</label><input class="form-control" type="text" placeholder="预期收入增长率标准差" name="sigmaraw" value="0.6482"></div>
+				<div class="form-group"><label for="">长期收入增长率</label><input class="form-control" type="text" placeholder="长期收入增长率" name="muaver" value="0.31"></div>
+				<div class="form-group"><label for="">长期收入增长率标准差</label><input class="form-control" type="text" placeholder="长期收入增长率标准差" name="sigmaaver" value="0.78"></div>
+				<div class="form-group"><label for="">公司税率</label><input class="form-control" type="text" placeholder="公司税率" name="tao" value="0.15"></div>
+				<div class="form-group"><label for="">无风险利率</label><input class="form-control" type="text" placeholder="无风险利率" name="rf" value="0.0381"></div>
+				<div class="form-group"><label for="">增长率随机过程的回归平均速度</label><input class="form-control" type="text" placeholder="增长率随机过程的回归平均速度" name="kai" value="2.77"></div>
+				<div class="form-group"><label for="">变动成本率</label><input class="form-control" type="text" placeholder="变动成本率" name="gamavalraw" value="1.0453"></div>
+				<div class="form-group"><label for="">长期变动成本率</label><input class="form-control" type="text" placeholder="长期变动成本率" name="gamavalaver" value="0.90"></div>
+				<div class="form-group"><label for="">变动成本标准差</label><input class="form-control" type="text" placeholder="变动成本标准差" name="fairaw" value="0.1034"></div>
+				<div class="form-group"><label for="">长期变动成本标准差平均值</label><input class="form-control" type="text" placeholder="长期变动成本标准差平均值" name="faiaver" value="0.0517"></div>
+				<div class="form-group"><label for="">折旧率</label><input class="form-control" type="text" placeholder="折旧率" name="cr" value="0.0292"></div>
+				<div class="form-group"><label for="">资本支出率</label><input class="form-control" type="text" placeholder="资本支出率" name="dr" value="0.0277"></div>
+				<div class="form-group"><label for="">收入因素风险的市场价格</label><input class="form-control" type="text" placeholder="收入因素风险的市场价格" name="lambda" value="0.062"></div>
+				<div class="form-group"><label for="">估计期间</label><input class="form-control" type="text" placeholder="估计期间" name="tNum" value="1"></div>
+				<div class="form-group"><label for="">离散时间模型的时间增量</label><input class="form-control" type="text" placeholder="离散时间模型的时间增量" name="dt" value="1"></div>
+			</form>
+			<div class="form-group" style="clear: both; padding-top: 20px;margin-left: 20px;"><label for=""></label><button onclick="test()" class="btn btn-primary">计算一次</button><label for=""style="margin-left: 20px;">结果：</label><input class="form-control" id="result1" style="display: inline-block; width: 200px;"/></div>
+			<div class="" style="margin-top: 20px;margin-left: 20px;"><label for="">模拟次数：</label><input class="form-control" type="text" placeholder="次数" id="calNum" name="num" value="10000" style="display: inline-block; width: 150px; margin-right: 20px;"><button class="btn btn-primary" onclick="test(1)">计算结果</button> <label for="" style="margin-left: 20px;">结果：</label><input class="form-control" id="result2" style="width: 400px; display: inline-block; "/></div>
+
+		</div>
+	</div>
+</div>
+
+</body>
+
+<script type="text/javascript">
+// (function(){
+// 
+function test(isMany){
+	MonteCarlo.initialise();
+	if(isMany){
+		var time = document.getElementById("calNum").value;
+		MonteCarlo.setTimes(time);
+		document.getElementById("result2").value = time + '次模拟，结果为：' + MonteCarlo.doManyTimeSimulate();
+	}else {
+		var num = MonteCarlo.doOneTimeSimulate();
+		document.getElementById('result1').value = num;
+	}
+}
+
+Math.randomGaussian = function(mean, standardDeviation) {
+
+    var mean = 0.0;
+    var standardDeviation = 1.0;
+
+    if (Math.randomGaussian.nextGaussian !== undefined) {
+        var nextGaussian = Math.randomGaussian.nextGaussian;
+        delete Math.randomGaussian.nextGaussian;
+        return (nextGaussian * standardDeviation) + mean;
+    } else {
+        var v1, v2, s, multiplier;
+        do {
+            v1 = 2 * Math.random() - 1; // between -1 and 1
+            v2 = 2 * Math.random() - 1; // between -1 and 1
+            s = v1 * v1 + v2 * v2;
+        } while (s >= 1 || s == 0);
+        multiplier = Math.sqrt(-2 * Math.log(s) / s);
+        Math.randomGaussian.nextGaussian = v2 * multiplier;
+        return (v1 * multiplier * standardDeviation) + mean;
+    }
+
+};
+
+
+var MonteCarlo = {
+	time : 1,
+	setTimes : function(time) {
+		this.time = time;
+	},
+	init: function(){
+		// //1. 期初收入
+		// this._rvalraw = 83.7;
+		// //2. 期初可动用现金
+		// this._xvalraw = 78.7;
+		// //3. 期初固定资产
+		// this._pvalraw = 4.62;
+		// //4. 收入增长率
+		// this._mural = 1.4785;
+		// //5. 收入标准差
+		// this._sigmaraw = 25.13;
+		// //6. 预期收入增长率标准差
+		// this._etaraw = 0.8641;
+		// //7. 长期收入增长率
+		// this._muaver = 0.2577;
+		// //8. 长期收入增长率标准差
+		// this._sigmaaver = 0.1218;
+		// //9. 公司税率
+		// this._tao=0.15;
+		// //10. 无风险利率
+		// this._rf = 0.0298;
+		// //11. 增长率随机过程的回归平均速度
+		// this._kai = 1.3863;
+		// //12. 变动成本率
+		// this._gamavalraw = 0.966;
+		// //13. 长期变动成本率
+		// this._gamavalaver = 0.19;
+		// //14. 变动成本标准差
+		// this._fairaw = 0.0845;
+		// //15. 长期变动成本标准差平均值
+		// this._faiaver = 0.0423;
+		// //16. 折旧率
+		// this._dr = 0.1427;
+		// //17. 资本支出率
+		// this._cr = 0.07;
+		// //18. 收入因素风险的市场价格
+		// this._lambda = 0.1068;
+		// //19. 估计期间
+		// this._tNum = 1;
+		// //20. 离散时间模型的时间增量
+		// this._dt = 0.25;
+		// //资本性支出
+		// this._pval = 0;
+		// //多次模拟的总和
+		// this._sumV = 0; 
+		// //固定值，3.4.1.1-表达式17中提到
+		// this._mval = 10;
+
+		//1. 期初收入
+		this._rvalraw = 1940952;
+		//2. 期初可动用现金
+		this._xvalraw = 169812;
+		//3. 期初固定资产
+		this._pvalraw = 80653;
+		//4. 收入增长率
+		this._muraw = 0.3088;
+		//5. 收入标准差
+		this._sigmaraw = 0.6482;
+		//6. 预期收入增长率标准差
+		this._etaraw = 0.6267;
+		//7. 长期收入增长率
+		this._muaver = 0.31;
+		//8. 长期收入增长率标准差
+		this._sigmaaver = 0.78;
+		//9. 公司税率
+		this._tao=0.15;
+		//10. 无风险利率
+		this._rf = 0.0381;
+		//11. 增长率随机过程的回归平均速度
+		this._kai = 2.77;
+		//12. 变动成本率
+		this._gamavalraw = 1.0453;
+		//13. 长期变动成本率
+		this._gamavalaver = 0.90;
+		//14. 变动成本标准差
+		this._fairaw = 0.1034;
+		//15. 长期变动成本标准差平均值
+		this._faiaver = 0.0517;
+		//16. 折旧率
+		this._dr = 0.0292;
+		//17. 资本支出率
+		this._cr = 0.0277;
+		//18. 收入因素风险的市场价格
+		this._lambda = 0.062;
+		//19. 估计期间
+		this._tNum = 3;
+		//20. 离散时间模型的时间增量
+		this._dt = 1;
+		//资本性支出
+		this._pval = 0;
+		//多次模拟的总和
+		this._sumV = 0;
+		//固定值，3.4.1.1-表达式17中提到
+		this._mval = 10;
+
+	},
+
+	/**
+	 * [_getRValue 3.4.1.1-表达式22 R(t+∆t)=R(t)e^({[μ(t)-λ ̅σ(t)-〖σ(t)〗^2/2]∆t+σ(t) √∆t ε_1})]
+	 * @param  {[type]} rvalPre  [description]
+	 * @param  {[type]} muPre    [description]
+	 * @param  {[type]} lambda   [description]
+	 * @param  {[type]} sigmaPre [description]
+	 * @param  {[type]} deltat   [description]
+	 * @param  {[type]} random   [description]
+	 * @return {[type]}          [description]
+	 */
+	_getRValue: function(rvalPre, muPre, lambda, sigmaPre, deltat, random) {
+		return (rvalPre * Math.exp((muPre - lambda * sigmaPre - sigmaPre * sigmaPre/2) * deltat + sigmaPre * Math.sqrt(deltat) * random));
+	},
+
+	/**
+	 * [_getUValue 3.4.1.1-表达式23 μ(t+∆t)=e^(-κ∆t) μ(t)+(1-e^(-κ∆t) ) μ ̅+√((1-e^(-κ∆t))/2κ) η(t)ε_2]
+	 */
+	_getUValue: function(muvalPre, kai, deltat, muaver, etaPre, random) {
+		return muvalPre * Math.exp(-1 * kai * deltat) + (1 - Math.exp(-1 * kai * deltat)) * muaver + Math.sqrt((1- Math.exp(-2 * kai * deltat)) / (2 * kai)) * etaPre * random;
+	},
+
+	/**
+	 * [_getGamaValue 3.4.1.1-表达式24 γ(t+∆t)=e^(-κ∆t) γ(t)+(1-e^(-κ∆t) ) γ ̅+√((1-e^(-κ∆t))/2κ) φ(t)ε_3]
+	 */
+	_getGamaValue: function(gamavalPre, gamavalaver, kai, deltat, fai, random) {
+		return gamavalPre * Math.exp(-1 * kai * deltat) + (1 - Math.exp(-1 * kai * deltat)) * gamavalaver + Math.sqrt((1 - Math.exp(-2 * kai * deltat)) / (2 * kai)) * fai * random;
+	},
+
+	/**
+	 * [_getSigemaValue 3.4.1.1-表达式25 σ(t)=σ_0 e^(-κt)+σ ̅(1-e^(-κt)]
+	 * @param  {[type]} sigmaraw  [收入标准差]
+	 * @param  {[type]} sigmaaver [长期收入增长率标准差]
+	 * @param  {[type]} kai       [增长率随机过程的回归平均速度]
+	 * @param  {[type]} time      [description]
+	 * @return {[type]}           [description]
+	 */
+	_getSigemaValue: function(sigmaraw, sigmaaver, kai, time) {
+		return (sigmaraw * Math.exp(-kai * time) + sigmaaver * (1 - Math.exp(-kai * time)));
+	},
+
+	/**
+	 * [_getEtaValue 3.4.1.1-表达式26 η(t)=η_0 e^(-κt)]
+	 */
+	_getEtaValue: function(etaraw, kai, time) {
+		return etaraw * Math.exp(-1 * kai * time);		
+	},
+
+	/**
+	 * [_getFaiValue 3.4.1.1-表达式27]
+	 */
+	_getFaiValue: function(fairaw, faiaver, kai, time) {
+		return (fairaw * Math.exp(-1 * kai * time) + faiaver * (1 - Math.exp(-1 * kai * time)));
+	},
+
+	/**
+	 * [_getYValue 税后利润 3.4.1.1-表达式26]
+	 * 如果没有累计亏损且净收入为正时才需要纳税
+	 */
+	_getYValue: function(flag, tao, rval, cost, deltat) {
+		var ytemp = rval - cost;
+		if(flag <= 0){
+			flag = (-ytemp) > 0 ? -ytemp : 0;
+		} else {
+			flag = 1 - ytemp * deltat;
+			if(flag > 0){
+				tao = 0;
+			} else {
+				tao = 0.15;
+			}			
+		}
+		return (ytemp * (1 - tao));
+	},
+
+	/**
+	 * [_getDXValue 可用的现金流]
+	 * @param  {[type]} rf     [无风险率]
+	 * @param  {[type]} xpre   [最初可用现金]
+	 * @param  {[type]} dep    [折旧损失]
+	 * @param  {[type]} capx   [支出]
+	 * @param  {[type]} yval   [税后利润]
+	 * @param  {[type]} deltat [时间增量]
+	 * @return {[type]}        [description]
+	 */
+	_getDXValue: function(rf, xpre, dep, capx, yval, deltat) {
+		return (rf * xpre + dep - capx + yval) * deltat;
+	},
+
+	/**
+	 * [doOneTimeSimulate 计算一次模拟值]
+	 */
+	doOneTimeSimulate: function(){
+		var rand1, rand2, rand3, //三个随机数
+			rval = this._rvalraw, //期初收入
+		    muval = 0, //μ(t+∆t)
+		    gamaval = 0, //γ(t+∆t)
+			cost = 0, //成本
+			capx = 0, //资本性支出
+			dep = 0, //折旧损失
+			xval = this._xvalraw, //现金流总和
+			dx = 0, //可用的现金流
+			vval = 0, //公司价值
+			yval = 0, //税后利润
+			etaPre, //η(t)
+			sigmapre, //σ(t)
+			faiPre, //φ(t)
+			flag = 1;
+			var arr = [];
+
+		//获取三个正态随机变量
+		rand1 = Math.randomGaussian();
+		rand2 = Math.randomGaussian();
+		rand3 = Math.randomGaussian();
+
+		// console.log("source-rval: " + rval);
+		for(var i = 0; i < this._tNum/this._dt; i++) {
+			// if(i != this._tNum-1) continue;
+			// arr.push({'rval':rval,'muval':muval,'gamaval':gamaval,'cost':cost,'capx':capx,'dep':dep, 'dx':dx});
+			//3.4.1.1-表达式25 σ(t)=σ_0 e^(-κt)+σ ̅(1-e^(-κt))
+			sigmapre = this._getSigemaValue(this._sigmaraw, this._sigmaaver, this._kai, i + 1);
+			//3.4.1.1-表达式26 η(t)=η_0 e^(-κt)
+			etaPre = this._getEtaValue(this._etaraw, this._kai, i + 1);
+			//3.4.1.1-表达式27 φ(t)=φ_0 e^(-κt)+φ ̅(1-e^(-κt))
+			faiPre = this._getFaiValue(this._fairaw, this._faiaver, this._kai, i + 1);
+			//3.4.1.1-表达式22 R(t+∆t)=R(t)e^({[μ(t)-λ ̅σ(t)-〖σ(t)〗^2/2]∆t+σ(t) √∆t ε_1})
+			rval = this._getRValue(rval, muval, this._lambda, sigmapre, this._dt, rand1);
+			// console.log('sigmapre '+sigmapre);
+			// console.log('etaPre '+etaPre);
+			// console.log('faiPre '+faiPre);
+			// console.log('rval '+rval);
+			//3.4.1.1-表达式23 μ(t+∆t)=e^(-κ∆t) μ(t)+(1-e^(-κ∆t) ) μ ̅+√((1-e^(-κ∆t))/2κ) η(t)ε_2
+			muval = this._getUValue(muval, this._kai, this._dt, this._muaver, etaPre, rand2);
+			//3.4.1.1-表达式24 γ(t+∆t)=e^(-κ∆t) γ(t)+(1-e^(-κ∆t) ) γ ̅+√((1-e^(-κ∆t))/2κ) φ(t)ε_3
+			gamaval = this._getGamaValue(gamaval, this._gamavalaver, this._kai, this._dt, faiPre, rand3);
+			//成本
+			cost = gamaval * rval;
+			//资本性支出
+			capx = this._cr * rval;
+			//资本性支出总计
+			this._pval = capx;
+			//折旧损失
+			dep = this._dr * rval;
+
+			//税后利润
+			yval = this._getYValue(flag, 1, rval, cost, this._dt);
+			// console.log(yval);
+
+			//可用的现金流
+			dx = this._getDXValue(this._rf, xval, dep, capx, yval, this._dt);
+
+			//现金流总和
+			xval = dx;
+
+		}
+		// console.table(arr);
+		//公司目前价值 3.4.1.1-表达式17
+		vval = xval + this._mval * (rval - cost);
+		this._sumV += vval;
+		return vval;
+	},
+
+	/**
+	 * [多次模拟结果求值]
+	 * @param  {[type]} time [模拟次数]
+	 * @return {[type]}      [结果值]
+	 */
+	doManyTimeSimulate: function(time) {
+		time = this.time;
+		this._sumV = 0;
+		var v0 = 0;
+		for(var i=0; i < time; i++){
+			this.doOneTimeSimulate();	
+		}
+		
+		//公司价值
+		// console.log(this._sumV);
+		// console.log(Math.exp(-this._rf * 100));
+		v0 = (this._sumV / time) * Math.exp(-this._rf * this._tNum);
+		return v0;
+	},
+
+	/**
+	 * [initialise description]
+	 * @return {[type]} [description]
+	 */
+	initialise: function(){
+		var form = document.getElementById('monteForm');
+		//1. 期初收入
+		this._rvalraw = form.rvalraw.value,
+		//2. 可动用现金
+		this._xvalraw = form.xvalraw.value,
+		//3. 固定资产
+		this._pvalraw = form.pvalraw.value,
+		//4. 收入增长率
+		this._mural = form.mural.value,
+		//5. 收入标准差
+		this._sigmaraw = form.sigmaraw.value,
+		//6. 预期收入增长率标准差
+		this._etaraw = form.etaraw.value,
+		//7. 长期收入增长率
+		this._muaver = form.muaver.value,
+		//8. 长期收入增长率标准差
+		this._sigmaaver = form.sigmaaver.value,
+		//9. 公司税率
+		this._tao = form.tao.value,
+		//10. 无风险利率
+		this._rf = form.rf.value,
+		//11. 增长率随机过程的回归平均速度
+		this._kai = form.kai.value,
+		//12. 变动成本率
+		this._gamavalraw = form.gamavalraw.value,
+		//13. 长期变动成本率
+		this._gamavalaver = form.gamavalaver.value,
+		//14. 变动成本标准差
+		this._fairaw = form.fairaw.value,
+		//15. 长期变动成本标准差平均值
+		this._faiaver = form.faiaver.value;
+		//16. 折旧率
+		this._cr = form.cr.value, 
+		//17. 资本支出率
+		this._dr = form.dr.value,
+		//18. 收入因素风险的市场价格
+		this._lambda = form.lambda.value;
+		//19. 估计期间
+		this._tNum = form.tNum.value,
+		//20. 离散时间模型的时间增量
+		this._dt = form.dt.value,
+		//资本性支出
+		this._pval = 0,
+		this._mval = 10,
+		this._sumV = 0;
+	}
+}
+
+// })();
+</script>
+</html>
