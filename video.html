@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>测试视频</title>
+
+	<style type="text/css">
+	.model{
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		display: none;
+		background-color: #000;
+		opacity: 0.7;
+		z-index: 10;
+	}
+	.video-wrap{
+		position: absolute;
+		width: 900px;
+		height: 400px;
+		top: 100px;
+		left: 50%;
+		margin-left: -450px;
+		border: 1px solid #000;
+		display: none;
+		z-index: 20;
+		background-color: #fff;
+	}
+	</style>
+	<script src="http://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<button id="clickme">点击我播放</button>
+<div class="model"></div>
+<div class="video-wrap">
+	<video id="video" controls="controls" autoplay="autoplay" style="width:100%;height: 100%;"></video>
+</div>
+
+
+<script type="text/javascript">
+	var videoEle = $('#video')[0];
+	$("#clickme").click(function(){
+		$(".model, .video-wrap").show();
+		var videoUrl = 'http://www.w3school.com.cn/i/movie.ogg';
+		videoEle.src = videoUrl;
+	});
+	$(".model").click(function(){
+		$(".model, .video-wrap").hide();
+		videoEle.pause();
+	});
+</script>
+
+</body>
+</html>
